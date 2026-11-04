@@ -1,0 +1,273 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Jaque Marketing - Bandeja de Solicitudes (Admin: Media Buyer)</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#ffb95f",
+            "on-secondary": "#00354a",
+            "tertiary-fixed-dim": "#ffb95f",
+            "primary": "#4edea3",
+            "surface-container": "#1c1f29",
+            "inverse-primary": "#006c49",
+            "error-container": "#93000a",
+            "tertiary-container": "#e29100",
+            "on-error": "#690005",
+            "surface": "#0f131c",
+            "surface-dim": "#0f131c",
+            "inverse-on-surface": "#2c303a",
+            "on-tertiary": "#472a00",
+            "on-tertiary-fixed": "#2a1700",
+            "error": "#ffb4ab",
+            "on-primary": "#003824",
+            "on-background": "#dfe2ef",
+            "inverse-surface": "#dfe2ef",
+            "surface-tint": "#4edea3",
+            "primary-container": "#10b981",
+            "surface-variant": "#31353f",
+            "on-surface-variant": "#bbcabf",
+            "secondary-fixed-dim": "#7bd0ff",
+            "on-primary-container": "#00422b",
+            "on-secondary-fixed": "#001e2c",
+            "on-secondary-fixed-variant": "#004c69",
+            "on-surface": "#dfe2ef",
+            "on-primary-fixed": "#002113",
+            "surface-container-high": "#262a34",
+            "primary-fixed": "#6ffbbe",
+            "on-tertiary-container": "#523200",
+            "surface-container-highest": "#31353f",
+            "surface-container-lowest": "#0a0e17",
+            "surface-container-low": "#181b25",
+            "secondary-fixed": "#c4e7ff",
+            "primary-fixed-dim": "#4edea3",
+            "on-secondary-container": "#00374d",
+            "background": "#0f131c",
+            "secondary": "#7bd0ff",
+            "outline-variant": "#3c4a42",
+            "on-primary-fixed-variant": "#005236",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#653e00",
+            "secondary-container": "#00a6e0",
+            "tertiary-fixed": "#ffddb8",
+            "outline": "#86948a",
+            "surface-bright": "#353943"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-md": "1.5rem",
+            "space-md": "0.75rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "gutter-lg": "1.5rem",
+            "margin-lg": "2rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Inter"],
+            "metric-display": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-xs": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0f131c;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #262a34;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #3c4a42;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- ========================================================================= -->
+<!-- 1. SIDEBAR (SideNavBar Shared Component Specification)                    -->
+<!-- ========================================================================= -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 flex flex-col p-space-md bg-surface border-r border-outline-variant select-none justify-between">
+<!-- Top Branding & Telemetry Status -->
+<div class="flex flex-col gap-space-md">
+<!-- Brand Header -->
+<div class="flex items-center gap-space-sm px-space-xs py-space-xs"><div class="flex items-center gap-2.5 w-full"><div class="h-10 w-auto flex-shrink-0 flex items-center justify-center"><img alt="Oscar Parra · Consultor de Marketing" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XDsxM6hqT565ep_duS2WVQ229xOv3JJ03g8BYAtg_OoRdpDB7ZqKa9hD_BZ808PKsHUb7ZuM2kaRuZeZkg6owGB1jiPcMtHFR1fhBH3swkNfMlhZDaK5j9KrhaIT4HDO4BlJ-cltSBioZJ3lN1rIUvR72D6kHP0Q35WpjFaKWdk92_29h77oCdjlgYxvRwTjbh__3pfcDnJfxBhJmpgMIuZ2aYh7VJ9R1cLjQSy0a-"></div><div class="flex flex-col min-w-0 flex-1"><span class="font-headline-md text-[14px] font-bold text-on-surface tracking-tight truncate leading-tight">Oscar Parra</span><span class="font-label-xs text-[10px] text-primary flex items-center gap-1 font-medium tracking-wide uppercase truncate"><span class="w-1.5 h-1.5 rounded-full bg-primary-container inline-block animate-pulse"></span>Consultor Meta Ads</span></div></div></div>
+<!-- Quick Sync Action Button -->
+<div class="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/60"><div class="flex items-center gap-1.5 min-w-0"><span class="material-symbols-outlined text-secondary text-[16px] shrink-0">business_center</span><div class="flex flex-col min-w-0"><span class="font-label-xs text-[11px] font-semibold text-on-surface truncate">Jaque Marketing</span><span class="text-[9px] text-on-surface-variant truncate">Torreón, Coahuila</span></div></div><span class="px-1.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 text-[9px] font-mono shrink-0">PRO</span></div>
+<!-- Navigation Tab List -->
+<nav class="flex flex-col gap-1 mt-2">
+<!-- Tab 1: Inicio (Inactive) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-md text-label-md">Inicio</span>
+</a>
+<!-- Tab 2: Explorar (Inactive) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">travel_explore</span>
+<span class="font-label-md text-label-md">Explorar</span>
+</a>
+<!-- Tab 3: Reportes (Inactive) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-label-md text-label-md">Reportes</span>
+</a>
+<!-- Tab 4: Solicitudes (ACTIVE LOCK AS PER REQ) -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-medium border-l-2 border-primary transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-md text-label-md">Solicitudes</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-xs text-label-xs font-bold">4</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Sidebar Section: Operator Profile & Support -->
+<div class="flex flex-col gap-space-sm border-t border-outline-variant pt-space-md">
+<!-- Admin Profile Card -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg bg-surface-container-low border border-outline-variant/60"><div class="relative"><div class="w-9 h-9 rounded-full bg-surface-container-highest border border-primary flex items-center justify-center font-bold text-primary font-headline-md text-[13px] shadow-[0_0_12px_rgba(16,185,129,0.3)]">OP</div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface"></span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md font-semibold text-on-surface truncate">Oscar Parra</span><span class="font-label-xs text-label-xs text-primary truncate">Media Buyer · Lead</span></div><span class="material-symbols-outlined text-primary text-[18px]">verified</span></div>
+<!-- Footer Sub-links -->
+<div class="flex flex-col gap-0.5">
+<a class="flex items-center gap-space-sm px-space-md py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container text-body-sm font-body-sm transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+<span class="">Ajustes</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-1.5 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container text-body-sm font-body-sm transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[18px]">headset_mic</span>
+<span class="">Soporte Técnico</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- 2. GLOBAL TOP NAVBAR (TopNavBar Shared Component Execution)               -->
+<!-- ========================================================================= -->
+<header class="fixed top-0 right-0 left-64 h-16 z-30 flex items-center justify-between px-space-xl bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<!-- Breadcrumb & Mode Identifier -->
+<div class="flex items-center gap-space-md">
+<nav class="flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant">
+<span class="">Cuentas de Clientes</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="">Flujo Operativo</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">Bandeja de Solicitudes</span>
+</nav>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high border border-primary/30 text-primary font-label-xs text-label-xs"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="">Operador: Oscar Parra (Media Buyer)</span></span>
+</div>
+<!-- Center/Right Operations Bar -->
+<div class="flex items-center gap-space-md">
+<!-- Client Selector Dropdown -->
+<div class="relative">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded bg-surface-container-low border border-outline-variant text-on-surface hover:border-outline font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[16px] text-primary">apartment</span><span class="font-medium">Jaque Marketing (Torreón, Coahuila)</span><span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span></button>
+</div>
+<!-- Quick Search Bar -->
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded pl-8 pr-3 py-1.5 text-body-sm font-body-sm text-on-surface placeholder-outline focus:border-primary focus:ring-0 focus:outline-none transition-colors" placeholder="Buscar brief, campaña o ID..." type="text">
+</div>
+<!-- Actions Cluster -->
+<div class="flex items-center gap-space-xs border-l border-outline-variant pl-space-md">
+<!-- Notification button with badge -->
+<button class="relative p-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Notificaciones operativas">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container"></span>
+</button>
+<!-- Briefs Sync Button -->
+<button class="p-2 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Sincronizar briefs de WhatsApp">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+<!-- Action: New Brief Template CTA -->
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface border border-outline-variant font-label-md text-label-md font-semibold transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px] text-primary">add_circle</span>
+          Nueva Plantilla de Brief
+        </button>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- 3. MAIN WORKSPACE CANVAS (Left-64 offset + Right Slide-over Margin)       -->
+<!-- ========================================================================= -->
+<div class="ml-64 pt-16 pr-[500px] min-h-screen flex flex-col bg-surface">
+<!-- SUB-HEADER: Título, Filtros de Asignación y Métricas de Flujo -->
+<section class="p-space-xl pb-space-md border-b border-outline-variant/60 flex flex-col gap-space-md bg-surface-container-lowest/40">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Bandeja de Solicitudes</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Gestión y aprobación operativa de briefs enviados por los Account Managers para Meta Ads.</p>
+</div>
+<!-- Toggle Controls: Asignación -->
+<div class="flex items-center gap-space-sm bg-surface-container-low p-1 rounded border border-outline-variant self-start">
+<button class="px-space-md py-1 rounded bg-surface-container-high text-primary font-label-md text-label-md font-medium border-b border-primary shadow-sm">
+            Todas las solicitudes (14)
+          </button>
+<button class="px-space-md py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-medium transition-colors">
+            Mis asignadas (5)
+          </button>
+</div>
+</div>
+<!-- Quick Telemetry Row (KPI Counters) -->
+<div class="grid grid-cols-5 gap-space-sm pt-space-xs"><div class="flex items-center justify-between px-3 py-2 rounded bg-surface-container-low border border-outline-variant"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span><span class="font-label-md text-label-md text-on-surface font-medium">Nuevas</span></div><span class="font-headline-md text-headline-md text-primary font-bold">2</span></div><div class="flex items-center justify-between px-3 py-2 rounded bg-surface-container-low border border-outline-variant"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span><span class="font-label-md text-label-md text-on-surface font-medium truncate">Dudas</span></div><span class="font-headline-md text-headline-md text-tertiary font-bold">1</span></div><div class="flex items-center justify-between px-3 py-2 rounded bg-surface-container-low border border-outline-variant"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span><span class="font-label-md text-label-md text-on-surface font-medium truncate">En Prep.</span></div><span class="font-headline-md text-headline-md text-secondary font-bold">3</span></div><div class="flex items-center justify-between px-3 py-2 rounded bg-surface-container-low border border-outline-variant"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span><span class="font-label-md text-label-md text-on-surface font-medium truncate">Publicadas</span></div><span class="font-headline-md text-headline-md text-on-surface font-bold">6</span></div><div class="flex items-center justify-between px-3 py-2 rounded bg-surface-container-low border border-outline-variant"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-outline"></span><span class="font-label-md text-label-md text-on-surface font-medium truncate">Descartadas</span></div><span class="font-headline-md text-headline-md text-outline font-bold">1</span></div></div>
+</section>
+<!-- KANBAN BOARD: 4 COLUMNS -->
+<main class="p-space-xl flex-1 overflow-x-auto custom-scrollbar">
+<div class="grid grid-cols-5 gap-space-md min-w-[1240px] items-start"><!-- COLUMNA 1: NUEVAS --><div class="flex flex-col gap-space-md bg-surface-container-lowest/60 p-space-sm rounded border border-outline-variant"><div class="flex items-center justify-between pb-space-xs border-b border-outline-variant"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span><h2 class="font-headline-md text-[14px] font-bold text-on-surface">Nuevas</h2></div><span class="px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/30 font-label-xs text-label-xs font-bold">2</span></div><div class="flex flex-col gap-space-sm"><!-- CARD SELECCIONADA: Colegio Excélsior --><div class="relative bg-surface-container-high rounded p-3 border-2 border-primary shadow-[0_0_16px_-4px_rgba(78,222,163,0.25)] flex flex-col gap-2 cursor-pointer transition-transform hover:-translate-y-0.5"><div class="flex items-center justify-between"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest text-secondary border border-secondary/30 font-label-xs text-[11px] font-medium"><span class="material-symbols-outlined text-[13px]">school</span>Colegio Excélsior</span><span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span></div><div><h3 class="font-headline-md text-[14px] text-on-surface font-semibold leading-snug">Admisiones Bachillerato 2026</h3><p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1 mt-0.5">Objetivo: Leads (Instant Forms)</p></div><div class="grid grid-cols-2 gap-1.5 bg-surface-container-lowest/80 p-2 rounded border border-outline-variant/50 text-[11px]"><div class="flex items-center gap-1 text-on-surface"><span class="material-symbols-outlined text-primary text-[15px]">payments</span><span class="font-semibold">$18,000 MXN</span></div><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-outline text-[15px]">event</span><span class="">Límite: 28 Feb 2026</span></div></div><div class="flex items-center gap-1.5 pt-0.5"><span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-primary font-label-xs text-[10px] border border-outline-variant"><span class="material-symbols-outlined text-[12px]">attach_file</span> 2 Adjuntos</span><span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primary/10 text-primary font-label-xs text-[10px] border border-primary/20"><span class="material-symbols-outlined text-[12px]">check_circle</span> Brief Listo</span></div><div class="flex items-center justify-between pt-1.5 border-t border-outline-variant/60 text-[11px] text-on-surface-variant"><div class="flex items-center gap-1.5"><div class="w-5 h-5 rounded-full bg-primary/20 text-primary font-bold text-[10px] flex items-center justify-center border border-primary/40">J</div><span class="font-label-xs text-[11px] text-on-surface font-medium truncate">Jacky (Jaque)</span></div><span class="font-label-xs text-[10px] text-outline shrink-0">24 Feb 2026 · 10:15h</span></div></div><!-- CARD 2: La Cocina de Vale --><div class="bg-surface-container rounded p-3 border border-outline-variant hover:border-outline transition-colors flex flex-col gap-2 cursor-pointer hover:-translate-y-0.5 duration-150"><div class="flex items-center justify-between"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest text-secondary border border-secondary/30 font-label-xs text-[11px] font-medium"><span class="material-symbols-outlined text-[13px]">restaurant</span>La Cocina de Vale</span></div><div><h3 class="font-headline-md text-[14px] text-on-surface font-semibold leading-snug">Catering Corporativo &amp; Eventos</h3><p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1 mt-0.5">Objetivo: Mensajes a WhatsApp</p></div><div class="grid grid-cols-2 gap-1.5 bg-surface-container-lowest/80 p-2 rounded border border-outline-variant/50 text-[11px]"><div class="flex items-center gap-1 text-on-surface"><span class="material-symbols-outlined text-primary text-[15px]">payments</span><span class="font-semibold">$9,500 MXN</span></div><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-outline text-[15px]">event</span><span class="">Límite: 2 Mar 2026</span></div></div><div class="flex items-center gap-1.5 pt-0.5"><span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-[10px] border border-outline-variant"><span class="material-symbols-outlined text-[12px]">attach_file</span> 3 Creativos</span></div><div class="flex items-center justify-between pt-1.5 border-t border-outline-variant/60 text-[11px] text-on-surface-variant"><div class="flex items-center gap-1.5"><div class="w-5 h-5 rounded-full bg-secondary/20 text-secondary font-bold text-[10px] flex items-center justify-center border border-secondary/40">J</div><span class="font-label-xs text-[11px] text-on-surface font-medium truncate">Jacky (Jaque)</span></div><span class="font-label-xs text-[10px] text-outline shrink-0">24 Feb 2026 · 09:30h</span></div></div></div></div><!-- COLUMNA 2: FALTAN MATERIALES O DUDAS --><div class="flex flex-col gap-space-md bg-surface-container-lowest/60 p-space-sm rounded border border-outline-variant"><div class="flex items-center justify-between pb-space-xs border-b border-outline-variant"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary inline-block"></span><h2 class="font-headline-md text-[14px] font-bold text-on-surface">Faltan materiales o dudas</h2></div><span class="px-2 py-0.5 rounded bg-tertiary/10 text-tertiary border border-tertiary/30 font-label-xs text-label-xs font-bold">1</span></div><div class="flex flex-col gap-space-sm"><div class="bg-surface-container rounded p-3 border border-tertiary/50 hover:border-tertiary transition-colors flex flex-col gap-2 cursor-pointer"><div class="flex items-center justify-between"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-lowest text-secondary border border-secondary/30 font-label-xs text-[11px] font-medium"><span class="material-symbols-outlined text-[13px]">apartment</span>Inmobiliaria Regia</span><span class="material-symbols-outlined text-tertiary text-[18px]">help_outline</span></div><div><h3 class="font-headline-md text-[14px] text-on-surface font-semibold leading-snug">Departamentos Torre Mitras</h3><p class="font-body-sm text-[11px] text-on-surface-variant line-clamp-1 mt-0.5">Objetivo: Conversiones Web (Landing)</p></div><div class="grid grid-cols-2 gap-1.5 bg-surface-container-lowest/80 p-2 rounded border border-outline-variant/50 text-[11px]"><div class="flex items-center gap-1 text-on-surface"><span class="material-symbols-outlined text-primary text-[15px]">payments</span><span class="font-semibold">$22,000 MXN</span></div><div class="flex items-center gap-1 text-tertiary"><span class="material-symbols-outlined text-[15px]">pending</span><span class="">Esperando URL</span></div></div><div class="p-1.5 rounded bg-tertiary/10 border border-tertiary/30 flex items-start gap-1 text-[11px] text-tertiary leading-tight"><span class="material-symbols-outlined text-[14px] shrink-0 mt-0.5">priority_high</span><span class="">Falta enlace parametrizado de UTM y video 9:16.</span></div><div class="flex items-center justify-between pt-1.5 border-t border-outline-variant/60 text-[11px] text-on-surface-variant"><div class="flex items-center gap-1.5"><div class="w-5 h-5 rounded-full bg-primary/20 text-primary font-bold text-[10px] flex items-center justify-center border border-primary/40">J</div><span class="font-label-xs text-[11px] text-on-surface font-medium truncate">Jacky (Jaque)</span></div><span class="font-label-xs text-[10px] text-outline shrink-0">23 Feb 2026 · 16:40h</span></div></div></div></div><!-- COLUMNA 3: EN PREPARACIÓN --><div class="flex flex-col gap-space-md bg-surface-container-lowest/60 p-space-sm rounded border border-outline-variant"><div class="flex items-center justify-between pb-space-xs border-b border-outline-variant"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary inline-block"></span><h2 class="font-headline-md text-[14px] font-bold text-on-surface">En preparación</h2></div><span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary border border-secondary/30 font-label-xs text-label-xs font-bold">3</span></div><div class="flex flex-col gap-space-sm"><div class="bg-surface-container rounded p-3 border border-outline-variant hover:border-secondary/60 transition-colors flex flex-col gap-2 cursor-pointer"><span class="font-label-xs text-[11px] text-secondary font-mono truncate">Editorial El Tiempo · act_410294</span><h3 class="font-headline-md text-[14px] text-on-surface font-semibold leading-snug">Suscripción Digital 2026</h3><div class="flex items-center justify-between text-[11px] text-on-surface-variant bg-surface-container-lowest/70 p-1.5 rounded"><span class="text-on-surface font-semibold">$14,000 MXN</span><span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> Oscar armando</span></div><div class="flex items-center justify-between pt-1.5 border-t border-outline-variant/60 text-[11px] text-on-surface-variant"><span class="text-[10px] text-on-surface-variant">Remitente: Jacky</span><span class="text-[10px] text-primary">Límite: Mañana</span></div></div><div class="bg-surface-container rounded p-3 border border-outline-variant hover:border-secondary/60 transition-colors flex flex-col gap-2 cursor-pointer"><span class="font-label-xs text-[11px] text-secondary font-mono truncate">AGO Sports · act_882012</span><h3 class="font-headline-md text-[14px] text-on-surface font-semibold leading-snug">Lanzamiento Colección Padel</h3><div class="flex items-center justify-between text-[11px] text-on-surface-variant bg-surface-container-lowest/70 p-1.5 rounded"><span class="text-on-surface font-semibold">$16,500 MXN</span><span class="text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">tune</span> Pixels y CBO</span></div><div class="flex items-center justify-between pt-1.5 border-t border-outline-variant/60 text-[11px] text-on-surface-variant"><span class="text-[10px] text-on-surface-variant">Remitente: Jacky</span><span class="text-[10px] text-outline">26 Feb 2026</span></div></div></div></div><!-- COLUMNA 4: PUBLICADAS --><div class="flex flex-col gap-space-md bg-surface-container-lowest/60 p-space-sm rounded border border-outline-variant"><div class="flex items-center justify-between pb-space-xs border-b border-outline-variant"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span><h2 class="font-headline-md text-[14px] font-bold text-on-surface">Publicadas</h2></div><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant font-label-xs text-label-xs font-bold">6</span></div><div class="flex flex-col gap-space-sm"><div class="bg-surface-container-low rounded p-2.5 border border-outline-variant/60 flex flex-col gap-1 text-[11px]"><div class="flex items-center justify-between"><span class="text-primary-container font-semibold text-[10px] flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>ACTIVA EN META</span><span class="font-mono text-outline text-[10px]">act_90412850</span></div><h4 class="font-semibold text-on-surface truncate">Colegio Excélsior - Primaria</h4><div class="flex justify-between text-on-surface-variant text-[10px]"><span class="">Presupuesto: $12,000 MXN</span><span class="text-primary">Oscar · 22 Feb 2026</span></div></div><div class="bg-surface-container-low rounded p-2.5 border border-outline-variant/60 flex flex-col gap-1 text-[11px]"><div class="flex items-center justify-between"><span class="text-primary-container font-semibold text-[10px] flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>ACTIVA EN META</span><span class="font-mono text-outline text-[10px]">act_11920834</span></div><h4 class="font-semibold text-on-surface truncate">Torre Alvares - LeadGen</h4><div class="flex justify-between text-on-surface-variant text-[10px]"><span class="">Presupuesto: $18,000 MXN</span><span class="text-primary">Oscar · 20 Feb 2026</span></div></div></div></div><!-- COLUMNA 5: DESCARTADAS --><div class="flex flex-col gap-space-md bg-surface-container-lowest/60 p-space-sm rounded border border-outline-variant"><div class="flex items-center justify-between pb-space-xs border-b border-outline-variant"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-outline inline-block"></span><h2 class="font-headline-md text-[14px] font-bold text-on-surface">Descartadas</h2></div><span class="px-2 py-0.5 rounded bg-surface-container-high text-outline border border-outline-variant font-label-xs text-label-xs font-bold">1</span></div><div class="flex flex-col gap-space-sm"><div class="bg-surface-container-low/70 rounded p-2.5 border border-outline-variant/50 flex flex-col gap-1 text-[11px] opacity-75"><div class="flex items-center justify-between"><span class="text-outline font-semibold text-[10px]">CANCELADA POR CLIENTE</span><span class="font-mono text-outline text-[10px]">18 Feb 2026</span></div><h4 class="font-medium text-on-surface-variant truncate line-through">Promo San Valentín 2026</h4><p class="text-on-surface-variant text-[10px]">Cliente decidió redireccionar inversión a Marzo.</p></div></div></div></div>
+</main>
+</div>
+<!-- ========================================================================= -->
+<!-- 4. SLIDE-OVER DRAWER (Panel Lateral de Detalles - Colegio Excélsior)       -->
+<!-- ========================================================================= -->
+<aside class="fixed top-16 right-0 w-[500px] h-[calc(100vh-4rem)] z-40 bg-surface-container-low border-l border-outline-variant shadow-2xl flex flex-col justify-between overflow-hidden"><!-- HEADER DEL DRAWER --><div class="p-space-lg pb-space-sm border-b border-outline-variant flex flex-col gap-space-xs bg-surface-container-lowest/50 shrink-0"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="px-2 py-0.5 rounded bg-primary/10 border border-primary/30 text-primary font-label-xs text-label-xs font-bold uppercase tracking-wider">Nueva Solicitud</span><span class="px-2 py-0.5 rounded bg-surface-container text-secondary border border-secondary/30 font-label-xs text-label-xs font-semibold">Colegio Excélsior</span></div><button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Cerrar panel (Esc)"><span class="material-symbols-outlined text-[20px]">close</span></button></div><h2 class="font-headline-lg text-[20px] text-on-surface font-bold mt-1 tracking-tight">Admisiones Bachillerato 2026</h2><div class="grid grid-cols-3 gap-2 bg-surface-container-lowest p-2 rounded border border-outline-variant/60 text-[11px] mt-1"><div class="flex flex-col"><span class="text-on-surface-variant text-[10px]">Presupuesto:</span><span class="text-primary font-bold font-mono">$18,000.00 MXN</span></div><div class="flex flex-col"><span class="text-on-surface-variant text-[10px]">Límite Salida:</span><span class="text-on-surface font-medium">28 Feb 2026</span></div><div class="flex flex-col"><span class="text-on-surface-variant text-[10px]">Estado:</span><span class="text-secondary font-medium">Por Revisar</span></div></div></div><!-- CONTENIDO SCROLLEABLE --><div class="flex-1 overflow-y-auto p-space-md flex flex-col gap-space-md custom-scrollbar"><!-- LÍNEA DE TIEMPO DE AUDITORÍA PASO A PASO --><section class="flex flex-col gap-2"><div class="flex items-center gap-2 text-on-surface font-headline-md text-[14px] font-semibold"><span class="material-symbols-outlined text-primary text-[18px]">timeline</span><h3 class="">Línea de Tiempo de Auditoría</h3></div><div class="flex flex-col gap-2 bg-surface-container p-3 rounded border border-outline-variant relative text-[11px]"><div class="flex items-start gap-2.5 relative"><div class="w-5 h-5 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 border border-primary/50 text-[11px] font-bold">1</div><div class="flex-1"><div class="flex items-center justify-between"><span class="font-semibold text-on-surface">Enviada</span><span class="text-outline text-[10px]">24 Feb 2026 · 10:15 hrs</span></div><p class="text-on-surface-variant text-[11px]">Jacky (Jaque) subió brief y creativos base.</p></div></div><div class="flex items-start gap-2.5 relative border-t border-outline-variant/40 pt-2"><div class="w-5 h-5 rounded-full bg-tertiary/20 text-tertiary flex items-center justify-center shrink-0 border border-tertiary/50 text-[11px] font-bold">2</div><div class="flex-1"><div class="flex items-center justify-between"><span class="font-semibold text-tertiary">Pregunta de Oscar</span><span class="text-outline text-[10px]">24 Feb 2026 · 11:30 hrs</span></div><p class="text-on-surface-variant text-[11px]">Oscar Parra (Media Buyer) solicitó confirmación de edad del target y pixel.</p></div></div><div class="flex items-start gap-2.5 relative border-t border-outline-variant/40 pt-2"><div class="w-5 h-5 rounded-full bg-secondary/20 text-secondary flex items-center justify-center shrink-0 border border-secondary/50 text-[11px] font-bold">3</div><div class="flex-1"><div class="flex items-center justify-between"><span class="font-semibold text-secondary">Respuesta de la agencia</span><span class="text-outline text-[10px]">24 Feb 2026 · 12:45 hrs</span></div><p class="text-on-surface-variant text-[11px]">Jacky (Jaque) confirmó segmento padres 35-52 años y UTMs.</p></div></div><div class="flex items-start gap-2.5 relative border-t border-outline-variant/40 pt-2 opacity-75"><div class="w-5 h-5 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 border border-outline-variant text-[11px] font-bold">4</div><div class="flex-1"><div class="flex items-center justify-between"><span class="font-semibold text-outline">Publicada en Meta</span><span class="text-outline text-[10px]">Pendiente</span></div><p class="text-outline text-[11px]">A la espera de confirmación de publicación por Oscar Parra.</p></div></div></div></section><!-- HILO DE CONVERSACIÓN OPERATIVO --><section class="flex flex-col gap-2"><div class="flex items-center gap-2 text-on-surface font-headline-md text-[14px] font-semibold"><span class="material-symbols-outlined text-secondary text-[18px]">forum</span><h3 class="">Hilo de Conversación Operativo</h3></div><div class="flex flex-col gap-2.5 bg-surface-container-lowest p-3 rounded border border-outline-variant"><!-- Mensaje Jacky --><div class="flex flex-col gap-1 bg-surface-container-low p-2.5 rounded border border-outline-variant/60"><div class="flex items-center justify-between text-[11px]"><span class="font-bold text-secondary flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span>Jacky (Jaque)</span><span class="text-outline text-[10px]">24 Feb 2026 · 10:15 hrs</span></div><p class="text-on-surface text-[12px] leading-relaxed mt-0.5">Oscar, te dejo el brief de Bachillerato 2026 para Colegio Excélsior. El cliente quiere arrancar antes del fin de semana con CBO y presupuesto inicial de $18,000 MXN.</p></div><!-- Mensaje Oscar --><div class="flex flex-col gap-1 bg-surface-container-high p-2.5 rounded border border-primary/30"><div class="flex items-center justify-between text-[11px]"><span class="font-bold text-primary flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span>Oscar Parra (Media Buyer)</span><span class="text-outline text-[10px]">24 Feb 2026 · 11:30 hrs</span></div><p class="text-on-surface text-[12px] leading-relaxed mt-0.5">Recibido Jacky. ¿El formulario instantáneo conservará los campos de campus Cumbres o aplicará a ambos campus? El video Stories 9:16 ya quedó verificado en alta.</p></div><!-- Mensaje Jacky Respuesta --><div class="flex flex-col gap-1 bg-surface-container-low p-2.5 rounded border border-outline-variant/60"><div class="flex items-center justify-between text-[11px]"><span class="font-bold text-secondary flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary"></span>Jacky (Jaque)</span><span class="text-outline text-[10px]">24 Feb 2026 · 12:45 hrs</span></div><p class="text-on-surface text-[12px] leading-relaxed mt-0.5">Solo Campus Cumbres por ahora. Ya actualicé el documento de copy con los disclaimers requeridos.</p></div><!-- CAJA PARA REDACTAR MENSAJE RÁPIDO --><div class="flex flex-col gap-1.5 pt-1"><div class="relative"><textarea class="w-full bg-surface-container border border-outline-variant rounded p-2 text-body-sm text-[12px] text-on-surface placeholder-outline focus:border-primary focus:ring-0 focus:outline-none resize-none" placeholder="Escribe una respuesta o mensaje de WhatsApp para Jacky..." rows="2"></textarea></div><div class="flex items-center justify-between"><button class="text-outline hover:text-on-surface text-[11px] flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">attach_file</span>Adjuntar</button><button class="px-3 py-1 rounded bg-surface-container-high hover:bg-surface-variant text-primary font-medium text-[11px] border border-outline-variant flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">send</span>Enviar vía WhatsApp</button></div></div></div></section><!-- ADJUNTOS DESCARGABLES --><section class="flex flex-col gap-2"><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-on-surface font-headline-md text-[14px] font-semibold"><span class="material-symbols-outlined text-primary text-[18px]">download_for_offline</span><h3 class="">Adjuntos de la Solicitud (2)</h3></div><span class="text-[10px] text-outline font-mono">32.4 MB</span></div><div class="grid grid-cols-2 gap-2"><div class="flex items-center gap-2 p-2 rounded bg-surface-container border border-outline-variant hover:border-primary/50 cursor-pointer transition-colors"><span class="material-symbols-outlined text-primary text-[22px]">video_file</span><div class="flex flex-col min-w-0 flex-1"><span class="font-semibold text-on-surface text-[11px] truncate">Banner_Stories.mp4</span><span class="text-outline text-[10px]">28.1 MB · 1080x1920</span></div><span class="material-symbols-outlined text-outline text-[16px]">download</span></div><div class="flex items-center gap-2 p-2 rounded bg-surface-container border border-outline-variant hover:border-primary/50 cursor-pointer transition-colors"><span class="material-symbols-outlined text-secondary text-[22px]">description</span><div class="flex flex-col min-w-0 flex-1"><span class="font-semibold text-on-surface text-[11px] truncate">Copy_Final.docx</span><span class="text-outline text-[10px]">4.3 MB · Aprobado</span></div><span class="material-symbols-outlined text-outline text-[16px]">download</span></div></div></section></div><!-- ACCIONES INFERIORES DEL DETALLE --><div class="p-space-md border-t border-outline-variant bg-surface-container-lowest flex flex-col gap-2 shrink-0"><div class="grid grid-cols-2 gap-2"><!-- BOTÓN 1: Pedir información (Abre WhatsApp a Jacky) --><a class="flex items-center justify-center gap-1.5 px-2.5 py-2 rounded bg-tertiary/10 hover:bg-tertiary/20 border border-tertiary/40 text-tertiary font-label-md text-[11px] font-semibold transition-colors" href="https://wa.me/?text=Hola%20Jacky,%20tengo%20una%20duda%20sobre%20la%20solicitud%20Colegio%20Exc%C3%A9lsior%20Bachillerato%202026:" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span>Pedir información (WA)</a><!-- BOTÓN 2: Marcar en preparación --><button class="flex items-center justify-center gap-1.5 px-2.5 py-2 rounded bg-surface-container-high hover:bg-surface-variant border border-secondary/40 text-secondary font-label-md text-[11px] font-semibold transition-colors"><span class="material-symbols-outlined text-[16px]">handyman</span>En preparación</button></div><!-- BOTÓN 3: Marcar como publicada con selector de campaña Meta --><div class="flex flex-col gap-1.5 p-2 rounded bg-surface-container-low border border-primary/40"><div class="flex items-center justify-between text-[11px]"><span class="text-on-surface-variant font-medium flex items-center gap-1"><span class="material-symbols-outlined text-primary text-[14px]">link</span>Meta Ads Vinculado:</span><span class="font-mono text-primary text-[10px]">act_90412850</span></div><input class="w-full bg-surface-container-lowest border border-outline-variant rounded px-2 py-1 text-[11px] text-on-surface placeholder-outline font-mono focus:border-primary focus:outline-none" type="text" value="https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=90412850"><button class="w-full flex items-center justify-center gap-2 px-space-md py-2 rounded bg-primary-container hover:bg-primary text-on-primary-container font-label-md text-[12px] font-bold transition-all shadow-[0_0_16px_rgba(16,185,129,0.3)] active:scale-[0.98]"><span class="material-symbols-outlined text-[18px]">rocket_launch</span>Marcar como Publicada</button></div></div></aside>
+
+
+</body></html>

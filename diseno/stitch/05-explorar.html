@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explorar Rendimiento | Jaque Marketing</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#31353f",
+            "secondary-container": "#00a6e0",
+            "on-primary-fixed-variant": "#005236",
+            "surface-bright": "#353943",
+            "on-secondary-fixed": "#001e2c",
+            "on-tertiary": "#472a00",
+            "inverse-surface": "#dfe2ef",
+            "surface-dim": "#0f131c",
+            "tertiary-fixed": "#ffddb8",
+            "on-primary-fixed": "#002113",
+            "on-primary-container": "#00422b",
+            "secondary": "#7bd0ff",
+            "inverse-on-surface": "#2c303a",
+            "on-secondary": "#00354a",
+            "surface-container-high": "#262a34",
+            "on-tertiary-fixed-variant": "#653e00",
+            "error": "#ffb4ab",
+            "inverse-primary": "#006c49",
+            "on-secondary-container": "#00374d",
+            "on-tertiary-fixed": "#2a1700",
+            "tertiary-container": "#e29100",
+            "on-tertiary-container": "#523200",
+            "surface-variant": "#31353f",
+            "primary-container": "#10b981",
+            "on-surface-variant": "#bbcabf",
+            "primary-fixed-dim": "#4edea3",
+            "error-container": "#93000a",
+            "outline": "#86948a",
+            "on-secondary-fixed-variant": "#004c69",
+            "primary": "#4edea3",
+            "surface-tint": "#4edea3",
+            "outline-variant": "#3c4a42",
+            "secondary-fixed": "#c4e7ff",
+            "tertiary-fixed-dim": "#ffb95f",
+            "on-error": "#690005",
+            "on-primary": "#003824",
+            "background": "#0f131c",
+            "on-error-container": "#ffdad6",
+            "primary-fixed": "#6ffbbe",
+            "surface": "#0f131c",
+            "surface-container": "#1c1f29",
+            "surface-container-low": "#181b25",
+            "surface-container-lowest": "#0a0e17",
+            "on-surface": "#dfe2ef",
+            "on-background": "#dfe2ef",
+            "secondary-fixed-dim": "#7bd0ff",
+            "tertiary": "#ffb95f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "gutter": "1rem",
+            "margin-lg": "2rem",
+            "space-md": "0.75rem",
+            "margin-md": "1.5rem",
+            "space-lg": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "metric-display": ["Inter"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-xs": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0F131C;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #262A34;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #3C4A42;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SIDEBAR (Shared Component: SideNavBar) -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 flex flex-col p-space-md bg-surface border-r border-outline-variant justify-between select-none">
+<div class="flex flex-col gap-space-lg">
+<!-- Header Brand Logo & Sync Status -->
+<div class="px-space-xs pt-space-xs flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img alt="Isotipo minimalista Jaque Marketing" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UuQdTV_5eakcqWY_44Ogs5T4UYXoFXDnknORt-17ZyRSkLDh8M4vJPNvn0YOIb3_VTv4I1DC_LiSWFvwIrYHKcfhyYVzca4zbl-QupCR_vzcVb6-cZubTUZLvsIC4Gf7qiD4pVR-gCgkDT65XLhcoV5rVT2znKdZdbbXsIdH-FoQ_xUd2rGO7l6Mf5RjfLBKZ8ma4h2I1-59h9BgGpJKAKCb6O61pEL82eyGmufpI"/>
+</div>
+<div class="flex items-center justify-between mt-space-xs px-space-xs py-1 rounded bg-surface-container-low border border-outline-variant/50">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#10B981]"></span>
+<span class="font-label-xs text-label-xs text-primary font-semibold">Meta Ads Sync Activo</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">v20.0</span>
+</div>
+</div>
+<!-- Sync CTA Button -->
+<div class="px-space-xs">
+<button class="w-full flex items-center justify-center gap-space-xs py-space-sm px-space-md rounded bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-high hover:border-outline transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-primary text-[18px]">sync</span>
+<span>Sincronizar Datos</span>
+</button>
+</div>
+<!-- Main Navigation Tabs -->
+<nav class="flex flex-col gap-1 mt-space-xs">
+<!-- Inicio (Inactive) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-label-md text-label-md">Inicio</span>
+</a>
+<!-- Explorar (Active per requirements) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-medium border-l-2 border-primary" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">travel_explore</span>
+<span class="font-label-md text-label-md">Explorar</span>
+</a>
+<!-- Reportes (Inactive) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-label-md text-label-md">Reportes</span>
+</a>
+<!-- Solicitudes (Inactive with Badge) -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span class="font-label-md text-label-md">Solicitudes</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-xs text-label-xs font-bold border border-outline-variant/60">2</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom / Account Meta -->
+<div class="flex flex-col gap-space-md pt-space-md border-t border-outline-variant/60">
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+<span>Ajustes</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors text-label-md font-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]">headset_mic</span>
+<span>Soporte Técnico</span>
+</a>
+</div>
+<!-- User Info Badge -->
+<div class="flex items-center gap-space-sm px-space-sm py-space-xs rounded bg-surface-container-low border border-outline-variant/40">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-primary/30 flex items-center justify-center font-bold text-primary font-label-md text-label-md">
+          CM
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate leading-tight">Carlos Mendoza</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant truncate">Senior AM</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TOP APP BAR (Shared Component: TopNavBar) -->
+<header class="fixed top-0 right-0 left-64 h-16 z-30 flex items-center justify-between px-space-xl backdrop-blur-md bg-surface/90 border-b border-outline-variant">
+<!-- Breadcrumb & Client Switcher -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span>Cuentas de Clientes</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Colegio Excélsior</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-medium">Explorar Rendimiento</span>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<!-- Account Selector Dropdown Button -->
+<button class="flex items-center gap-space-xs px-2.5 py-1 rounded bg-surface-container border border-outline-variant hover:border-outline text-on-surface font-label-md text-label-md active:scale-[0.98] transition-all">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-semibold text-on-surface">Colegio Excélsior</span>
+<span class="text-on-surface-variant font-mono text-[11px]">(act_90412850)</span>
+<span class="px-1 py-0.2 rounded text-[10px] bg-primary/10 text-primary border border-primary/20">Activa</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<!-- Actions & Profile Info -->
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-primary transition-all duration-150 shadow-sm active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Solicitar Nueva Campaña</span>
+</button>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<button class="p-1.5 rounded hover:bg-surface-container hover:text-on-surface transition-colors" title="Sincronizar">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container hover:text-on-surface transition-colors relative" title="Notificaciones">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<!-- Avatar Director -->
+<div class="flex items-center gap-space-xs cursor-pointer group">
+<div class="w-8 h-8 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN VIEWPORT CANVAS -->
+<main class="ml-64 mt-16 p-space-xl flex-1 flex flex-col gap-space-xl overflow-x-hidden">
+<!-- PAGE TITLE & ADVANCED ANALYTICS FILTER BAR -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">Explorar Rendimiento</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Análisis comparativo de cohortes publicitarias y lectura de datos duros · Meta Ads API v20.0</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-surface-container-low border border-outline-variant text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Exportar CSV / Raw Data</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-surface-container-low border border-outline-variant text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Actualizar datos</span>
+</button>
+</div>
+</div>
+<!-- Interactive Filter Toolbar -->
+<div class="p-space-md bg-surface-container-low border border-outline-variant rounded-xl flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Date Range Selector -->
+<div class="flex items-center gap-2 px-space-md py-1.5 rounded bg-surface-container-lowest border border-outline-variant/80 text-on-surface font-label-md text-label-md cursor-pointer hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+<span class="font-medium">Este mes (1 - 20 Nov 2024)</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_drop_down</span>
+</div>
+<!-- Comparison Toggle Switch -->
+<div class="flex items-center gap-space-sm px-space-md py-1.5 rounded bg-surface-container-lowest border border-primary/30">
+<div class="w-8 h-4 bg-primary-container rounded-full relative p-0.5 cursor-pointer flex items-center justify-end">
+<div class="w-3 h-3 bg-on-primary-container rounded-full shadow-sm"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-medium">Comparar con periodo anterior <span class="text-on-surface-variant">(1 - 20 Oct 2024)</span></span>
+<span class="px-1.5 py-0.2 rounded font-label-xs text-label-xs bg-primary/20 text-primary font-bold">ON</span>
+</div>
+<!-- Campaigns Filter Dropdown -->
+<div class="flex items-center gap-2 px-space-md py-1.5 rounded bg-surface-container-lowest border border-outline-variant/80 text-on-surface font-label-md text-label-md cursor-pointer hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-secondary text-[18px]">filter_alt</span>
+<span>Todas las campañas (4 activas)</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+<!-- Metric Granularity Segmented Control -->
+<div class="flex items-center bg-surface-container-lowest p-0.5 rounded border border-outline-variant">
+<button class="px-3 py-1 rounded bg-surface-container-high text-primary font-label-md text-label-md font-medium shadow-sm">Por día</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Por campaña</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Por conjunto</button>
+</div>
+</div>
+</section>
+<!-- SECTION 1: CPL COMPARISON CHART -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-space-xl flex flex-col gap-space-lg backdrop-blur-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm border-b border-outline-variant/50">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">ssid_chart</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Evolución Comparativa: Costo por Lead (CPL)</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Dinámica diaria de costo unitario por adquisición vs. histórico equivalente del mes anterior</p>
+</div>
+<!-- Legend Pill Indicators -->
+<div class="flex flex-wrap items-center gap-space-lg font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-sm bg-[#10B981] inline-block shadow-[0_0_6px_#10B981]"></span>
+<span class="text-on-surface font-medium">Periodo Actual (Nov 2024) · <span class="text-primary font-semibold tabular-nums">$34.90 MXN</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-0.5 border-t-2 border-dashed border-[#94A3B8] inline-block"></span>
+<span class="text-on-surface-variant">Periodo Anterior (Oct 2024) · <span class="text-on-surface font-medium tabular-nums">$41.80 MXN</span></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-0.5 bg-tertiary inline-block"></span>
+<span class="text-tertiary font-medium">Benchmark Objetivo ($42.00 MXN)</span>
+</div>
+</div>
+</div>
+<!-- SVG Chart Canvas Area with 20 Data Points and Tooltip -->
+<div class="relative w-full h-72 bg-surface-container-lowest/80 rounded-lg p-space-md border border-outline-variant/40 flex flex-col justify-between">
+<!-- Background Grid Horizontal Guidelines -->
+<div class="absolute inset-x-8 inset-y-6 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="w-full border-b border-dashed border-outline"></div>
+<div class="w-full border-b border-dashed border-outline"></div>
+<div class="w-full border-b border-dashed border-outline"></div>
+<div class="w-full border-b border-dashed border-outline"></div>
+<div class="w-full border-b border-dashed border-outline"></div>
+</div>
+<!-- SVG Line Graphs -->
+<svg class="w-full h-full overflow-visible z-10" preserveaspectratio="none" viewbox="0 0 1000 240">
+<defs>
+<lineargradient id="currentGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#10B981" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#10B981" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Benchmark Line ($42.00 reference, approx Y=60) -->
+<line opacity="0.75" stroke="#FFB95F" stroke-dasharray="4,4" stroke-width="1.5" x1="20" x2="980" y1="65" y2="65"></line>
+<!-- Oct 2024: Previous Period Curve (Dashed #94A3B8) -->
+<!-- 20 points across X: 30 to 970 -->
+<path d="M 30,50 L 80,58 L 130,52 L 180,68 L 230,62 L 280,75 L 330,80 L 380,70 L 430,76 L 480,85 L 530,90 L 580,78 L 630,82 L 680,95 L 730,88 L 780,92 L 830,105 L 880,98 L 930,102 L 970,110" fill="none" opacity="0.65" stroke="#94A3B8" stroke-dasharray="5,5" stroke-width="2"></path>
+<!-- Nov 2024: Area Gradient Fill -->
+<path d="M 30,110 L 80,102 L 130,115 L 180,125 L 230,118 L 280,135 L 330,140 L 380,130 L 430,145 L 480,150 L 530,142 L 580,155 L 630,160 L 680,168 L 730,158 L 780,162 L 830,185 L 880,178 L 930,172 L 970,165 L 970,230 L 30,230 Z" fill="url(#currentGradient)"></path>
+<!-- Nov 2024: Current Period Curve (Solid Emerald #10B981) -->
+<path d="M 30,110 L 80,102 L 130,115 L 180,125 L 230,118 L 280,135 L 330,140 L 380,130 L 430,145 L 480,150 L 530,142 L 580,155 L 630,160 L 680,168 L 730,158 L 780,162 L 830,185 L 880,178 L 930,172 L 970,165" fill="none" stroke="#10B981" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Data Points (Nov 2024) -->
+<circle cx="30" cy="110" fill="#10B981" r="3.5"></circle>
+<circle cx="180" cy="125" fill="#10B981" r="3.5"></circle>
+<circle cx="380" cy="130" fill="#10B981" r="3.5"></circle>
+<circle cx="580" cy="155" fill="#10B981" r="3.5"></circle>
+<circle cx="730" cy="158" fill="#10B981" r="3.5"></circle>
+<!-- Highlight Point Día 18: X=880, Y=178 -->
+<circle class="animate-pulse" cx="880" cy="178" fill="#10B981" r="6" stroke="#0F131C" stroke-width="2"></circle>
+<line opacity="0.6" stroke="#10B981" stroke-dasharray="2,2" stroke-width="1" x1="880" x2="880" y1="20" y2="230"></line>
+</svg>
+<!-- Floating Tooltip Callout on Day 18 Point -->
+<div class="absolute right-[9%] top-8 bg-surface-container-high/95 border border-primary/40 rounded-lg p-space-sm shadow-xl backdrop-blur-md z-20 pointer-events-none transform -translate-x-1/2">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Día 18: $31.20 MXN</span>
+</div>
+<div class="font-label-xs text-label-xs text-primary font-semibold mt-0.5">
+            -22.5% vs Oct ($40.25 MXN)
+          </div>
+<div class="font-label-xs text-label-xs text-on-surface-variant mt-0.5">
+            Volumen: 14 leads captados
+          </div>
+</div>
+<!-- Chart X-Axis Labels (Day 1 to 20) -->
+<div class="flex justify-between text-on-surface-variant font-label-xs text-label-xs px-2 pt-2 border-t border-outline-variant/30 tabular-nums">
+<span>01 Nov</span>
+<span>04 Nov</span>
+<span>08 Nov</span>
+<span>12 Nov</span>
+<span>15 Nov</span>
+<span class="text-primary font-bold">18 Nov ★</span>
+<span>20 Nov</span>
+</div>
+</div>
+<!-- Bottom Metric Insights Panel -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-lg bg-surface-container border border-outline-variant/50 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Eficiencia Acumulada</span>
+<span class="font-metric-display text-metric-display font-bold text-primary tabular-nums">-16.5%</span>
+</div>
+<span class="px-2 py-1 rounded bg-primary/10 text-primary font-label-xs text-label-xs font-semibold">vs mes anterior</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container border border-outline-variant/50 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Ahorro Total Generado</span>
+<span class="font-metric-display text-metric-display font-bold text-on-surface tabular-nums">$4,250 MXN</span>
+</div>
+<span class="px-2 py-1 rounded bg-primary/10 text-primary font-label-xs text-label-xs font-semibold">Gasto Optimizado</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container border border-outline-variant/50 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">Estabilidad de CPL</span>
+<span class="font-metric-display text-metric-display font-bold text-secondary tabular-nums">94.2%</span>
+</div>
+<span class="px-2 py-1 rounded bg-secondary/10 text-secondary font-label-xs text-label-xs font-semibold">Baja Volatilidad</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2: HARD DATA MATRIX (The Master Analytical Table) -->
+<section class="bg-surface-container-low border border-outline-variant rounded-xl p-space-xl flex flex-col gap-space-lg backdrop-blur-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">table_chart</span>
+<div>
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Matriz de Datos Duros por Campaña</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant text-on-surface-variant font-label-xs text-label-xs font-semibold">4 Campañas Auditadas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Desglose granular de rendimiento operativo, costos unitarios y deltas de optimización</p>
+</div>
+</div>
+<!-- Table Quick Search & View Settings -->
+<div class="flex items-center gap-space-sm">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-8 pr-3 py-1.5 rounded bg-surface-container-lowest border border-outline-variant text-on-surface placeholder:text-on-surface-variant/60 font-body-sm text-body-sm focus:border-primary focus:ring-0" placeholder="Filtrar por nombre o ID..." type="text"/>
+</div>
+<button class="p-1.5 rounded bg-surface-container border border-outline-variant hover:border-outline text-on-surface-variant hover:text-on-surface" title="Personalizar Columnas">
+<span class="material-symbols-outlined text-[18px]">view_column</span>
+</button>
+</div>
+</div>
+<!-- High-Density Analytical Table Container -->
+<div class="overflow-x-auto rounded-lg border border-outline-variant custom-scrollbar bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant font-label-md text-label-md border-b border-outline-variant uppercase tracking-wider text-[11px]">
+<th class="py-3 px-space-md font-semibold">Campaña / Estrategia</th>
+<th class="py-3 px-space-md font-semibold text-right">Inversión ($MXN)</th>
+<th class="py-3 px-space-md font-semibold text-right">Leads Totales</th>
+<th class="py-3 px-space-md font-semibold text-right">Costo x Lead</th>
+<th class="py-3 px-space-md font-semibold text-right">CTR</th>
+<th class="py-3 px-space-md font-semibold text-right">CPM</th>
+<th class="py-3 px-space-md font-semibold text-center">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/40 font-body-sm text-body-sm">
+<!-- MASTER CONSOLIDATED TOTALS ROW (Prominent Financial SaaS Style) -->
+<tr class="bg-surface-container-high/90 border-b-2 border-primary/60 font-medium">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">functions</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface tracking-wide">TOTALES CONSOLIDADOS</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Periodo activo 1 - 20 Nov</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="font-bold text-on-surface text-[15px]">$6,500.00</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">+15% vs mes ant</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="font-bold text-on-surface text-[15px]">184 leads</span>
+<span class="font-label-xs text-label-xs text-primary font-semibold flex items-center gap-0.5">
+                    +22% <span class="material-symbols-outlined text-[13px]">arrow_upward</span>
+</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="font-bold text-primary text-[15px]">$34.90</span>
+<span class="font-label-xs text-label-xs text-primary font-semibold flex items-center gap-0.5">
+                    -14.5% <span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="font-bold text-on-surface text-[15px]">1.80%</span>
+<span class="font-label-xs text-label-xs text-primary font-semibold">+0.35% pts ▲</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right tabular-nums">
+<div class="flex flex-col items-end">
+<span class="font-bold text-on-surface text-[15px]">$45.20</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">+3.2% ▲</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<span class="px-2 py-0.5 rounded text-[11px] font-label-xs bg-primary/10 text-primary font-bold border border-primary/20">Auditado</span>
+</td>
+</tr>
+<!-- Row 1: Prospectos_Laguna_V2 -->
+<tr class="hover:bg-surface-container transition-colors duration-100 group">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary transition-colors">Prospectos_Laguna_V2</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">CBO · Leads instantáneos (Formularios Meta)</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums font-medium text-on-surface">$3,200.00</td>
+<td class="py-3 px-space-md text-right tabular-nums">
+<div class="flex items-center justify-end gap-1.5">
+<span class="font-semibold text-on-surface">85</span>
+<span class="px-1 py-0.2 rounded font-label-xs text-label-xs bg-primary/10 text-primary font-bold">+18% ▲</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums">
+<div class="flex items-center justify-end gap-1.5">
+<span class="font-bold text-primary">$37.60</span>
+<span class="px-1 py-0.2 rounded font-label-xs text-label-xs bg-primary/10 text-primary font-bold">-12.4% ▼</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums text-on-surface">2.10%</td>
+<td class="py-3 px-space-md text-right tabular-nums text-on-surface-variant">$41.00</td>
+<td class="py-3 px-space-md text-center">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-xs text-label-xs font-medium border border-outline-variant transition-colors">
+                  Ver detalle
+                </button>
+</td>
+</tr>
+<!-- Row 2: Admisiones_Prepa_2025_BOFU -->
+<tr class="hover:bg-surface-container transition-colors duration-100 group">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary transition-colors">Admisiones_Prepa_2025_BOFU</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Custom Audiences · Conversión Web (Pixel)</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums font-medium text-on-surface">$1,850.00</td>
+<td class="py-3 px-space-md text-right tabular-nums">
+<div class="flex items-center justify-end gap-1.5">
+<span class="font-semibold text-on-surface">52</span>
+<span class="px-1 py-0.2 rounded font-label-xs text-label-xs bg-primary/10 text-primary font-bold">+28% ▲</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums">
+<div class="flex items-center justify-end gap-1.5">
+<span class="font-bold text-primary">$35.58</span>
+<span class="px-1 py-0.2 rounded font-label-xs text-label-xs bg-primary/10 text-primary font-bold">-16.8% ▼</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums text-on-surface">1.95%</td>
+<td class="py-3 px-space-md text-right tabular-nums text-on-surface-variant">$46.50</td>
+<td class="py-3 px-space-md text-center">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-xs text-label-xs font-medium border border-outline-variant transition-colors">
+                  Ver detalle
+                </button>
+</td>
+</tr>
+<!-- Row 3: Retargeting_Padres_WhatsApp_LAL -->
+<tr class="hover:bg-surface-container transition-colors duration-100 group">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary transition-colors">Retargeting_Padres_WhatsApp_LAL</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Lookalike 2% · Chat Directo (WhatsApp API)</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums font-medium text-on-surface">$950.00</td>
+<td class="py-3 px-space-md text-right tabular-nums">
+<div class="flex items-center justify-end gap-1.5">
+<span class="font-semibold text-on-surface">31</span>
+<span class="px-1 py-0.2 rounded font-label-xs text-label-xs bg-primary/10 text-primary font-bold">+14% ▲</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums">
+<div class="flex items-center justify-end gap-1.5">
+<span class="font-bold text-primary">$30.65</span>
+<span class="px-1 py-0.2 rounded font-label-xs text-label-xs bg-primary/10 text-primary font-bold">-21.0% ▼</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums text-on-surface">2.40%</td>
+<td class="py-3 px-space-md text-right tabular-nums text-on-surface-variant">$39.80</td>
+<td class="py-3 px-space-md text-center">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-xs text-label-xs font-medium border border-outline-variant transition-colors">
+                  Ver detalle
+                </button>
+</td>
+</tr>
+<!-- Row 4: OpenHouse_Noviembre_Eventos (Desfavorable / Alerta Roja) -->
+<tr class="hover:bg-surface-container transition-colors duration-100 group">
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error-container"></span>
+<span class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-error transition-colors">OpenHouse_Noviembre_Eventos</span>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant">Geo 8km · Alcance/Leads Evento Presencial</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums font-medium text-on-surface">$500.00</td>
+<td class="py-3 px-space-md text-right tabular-nums">
+<div class="flex items-center justify-end gap-1.5">
+<span class="font-semibold text-on-surface">16</span>
+<span class="px-1 py-0.2 rounded font-label-xs text-label-xs bg-error-container/40 text-error font-bold">-6% ▼</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums">
+<div class="flex items-center justify-end gap-1.5">
+<span class="font-bold text-error">$31.25</span>
+<span class="px-1 py-0.2 rounded font-label-xs text-label-xs bg-error-container/40 text-error font-bold">+4.2% ▲</span>
+</div>
+</td>
+<td class="py-3 px-space-md text-right tabular-nums text-on-surface">1.25%</td>
+<td class="py-3 px-space-md text-right tabular-nums text-on-surface-variant">$52.00</td>
+<td class="py-3 px-space-md text-center">
+<button class="px-2 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-xs text-label-xs font-medium border border-outline-variant transition-colors">
+                  Ver detalle
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- SECTION 3: TOP PERFORMING ADS (CREATIVE AUDIT CARDS) -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">auto_awesome</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Anuncios con mejor rendimiento</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Top 3 creativos ordenados por menor Costo por Lead</p>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1 font-semibold" href="#">
+<span>Ver todos los anuncios (14)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Horizontal Compact Creative Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: AD_01_Video_Robotica_Reel -->
+<div class="bg-surface-container-low border border-primary/40 rounded-xl p-space-md flex gap-space-md relative overflow-hidden group hover:border-primary transition-all duration-200">
+<div class="w-20 h-24 rounded bg-surface-container-high flex-shrink-0 relative overflow-hidden flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant/70">smart_display</span>
+<span class="absolute top-1 left-1 px-1 py-0.2 rounded font-label-xs text-[9px] bg-primary-container text-on-primary-container font-extrabold uppercase">Top 1</span>
+<span class="absolute bottom-1 right-1 px-1 rounded text-[9px] font-mono bg-surface-dim/80 text-on-surface">0:24</span>
+</div>
+<div class="flex flex-col justify-between min-w-0 flex-1">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors" title="AD_01_Video_Robotica_Reel">AD_01_Video_Robotica_Reel</h3>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant truncate">Prospectos_Laguna_V2</p>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-space-xs border-t border-outline-variant/40 tabular-nums">
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">CPL</span>
+<span class="font-bold text-primary text-[13px]">$28.40</span>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">Leads</span>
+<span class="font-bold text-on-surface text-[13px]">46</span>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">CTR</span>
+<span class="font-medium text-on-surface text-[13px]">2.45%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: AD_02_Banner_Beca_1080x1080 -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-space-md flex gap-space-md relative overflow-hidden group hover:border-outline transition-all duration-200">
+<div class="w-20 h-24 rounded bg-surface-container-high flex-shrink-0 relative overflow-hidden flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant/70">image</span>
+<span class="absolute top-1 left-1 px-1 py-0.2 rounded font-label-xs text-[9px] bg-surface-container-highest text-on-surface font-bold uppercase">Top 2</span>
+<span class="absolute bottom-1 right-1 px-1 rounded text-[9px] font-mono bg-surface-dim/80 text-on-surface">1:1</span>
+</div>
+<div class="flex flex-col justify-between min-w-0 flex-1">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors" title="AD_02_Banner_Beca_1080x1080">AD_02_Banner_Beca_1080x1080</h3>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant truncate">Admisiones_Prepa</p>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-space-xs border-t border-outline-variant/40 tabular-nums">
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">CPL</span>
+<span class="font-bold text-primary text-[13px]">$32.10</span>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">Leads</span>
+<span class="font-bold text-on-surface text-[13px]">38</span>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">CTR</span>
+<span class="font-medium text-on-surface text-[13px]">1.92%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: AD_03_Testimoniales_Padres_Carrousel -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-space-md flex gap-space-md relative overflow-hidden group hover:border-outline transition-all duration-200">
+<div class="w-20 h-24 rounded bg-surface-container-high flex-shrink-0 relative overflow-hidden flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant/70">view_carousel</span>
+<span class="absolute top-1 left-1 px-1 py-0.2 rounded font-label-xs text-[9px] bg-surface-container-highest text-on-surface font-bold uppercase">Top 3</span>
+<span class="absolute bottom-1 right-1 px-1 rounded text-[9px] font-mono bg-surface-dim/80 text-on-surface">5 slides</span>
+</div>
+<div class="flex flex-col justify-between min-w-0 flex-1">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h3 class="font-label-md text-label-md font-bold text-on-surface truncate group-hover:text-primary transition-colors" title="AD_03_Testimoniales_Padres_Carrousel">AD_03_Testimoniales_Padres_Carrousel</h3>
+</div>
+<p class="font-label-xs text-label-xs text-on-surface-variant truncate">Retargeting_Padres</p>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-space-xs border-t border-outline-variant/40 tabular-nums">
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">CPL</span>
+<span class="font-bold text-primary text-[13px]">$33.80</span>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">Leads</span>
+<span class="font-bold text-on-surface text-[13px]">27</span>
+</div>
+<div>
+<span class="font-label-xs text-[10px] text-on-surface-variant block">CTR</span>
+<span class="font-medium text-on-surface text-[13px]">2.15%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

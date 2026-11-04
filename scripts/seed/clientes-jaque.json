@@ -1,0 +1,20 @@
+{
+  "workspace": {
+    "id": "jaque-marketing",
+    "nombre": "Jaque Marketing",
+    "ciudad": "Torreón, Coahuila"
+  },
+  "clientes": [
+    { "id": "colegio-excelsior", "nombre": "Colegio Excélsior", "giro": "Educación", "adAccountIds": ["2011619996264303"], "pageIds": ["1402784996610154"], "metricaPrincipal": "leads", "activo": true },
+    { "id": "la-cocina-de-vale", "nombre": "La Cocina de Vale", "giro": "Restaurante", "adAccountIds": ["736205702456564"], "pageIds": ["101861318358063"], "metricaPrincipal": "mensajes", "activo": true },
+    { "id": "editorial-el-tiempo", "nombre": "Editorial El Tiempo", "giro": "Medios", "adAccountIds": ["702850554311336"], "pageIds": ["241377203630", "629220603619251", "744461632074437"], "metricaPrincipal": "alcance", "activo": true },
+    { "id": "promoturdi", "nombre": "Promoturdi", "giro": "Turismo", "adAccountIds": ["1260969948830907"], "pageIds": ["306434646077788"], "metricaPrincipal": "mensajes", "activo": true },
+    { "id": "ago-sports", "nombre": "AGO Sports", "giro": "Deportes", "adAccountIds": ["864492699593273"], "pageIds": ["103671139412132"], "metricaPrincipal": "mensajes", "activo": true },
+    { "id": "jesus-melendez-kenworth", "nombre": "Jesús Meléndez · Kenworth", "giro": "Automotriz", "adAccountIds": ["844374248547606"], "pageIds": ["725788960614344", "840330912493405"], "metricaPrincipal": "mensajes", "activo": true },
+    { "id": "pensiones-360", "nombre": "Pensiones 360", "giro": "Servicios", "adAccountIds": ["25806711422330101"], "pageIds": ["992368547282009"], "metricaPrincipal": "leads", "activo": true },
+    { "id": "sabor-a-mi-laguna", "nombre": "Sabor a mi Laguna", "giro": "Restaurante", "adAccountIds": ["4240895046146344"], "pageIds": ["709306298934967"], "metricaPrincipal": "mensajes", "activo": true },
+    { "id": "aniep", "nombre": "ANIEP", "giro": "Educación", "adAccountIds": ["1472087884489809"], "pageIds": ["144638405401479"], "metricaPrincipal": "leads", "activo": true },
+    { "id": "miamatal", "nombre": "Miamatal", "giro": "Inmobiliaria", "adAccountIds": ["2031184400844525"], "pageIds": ["376291672239267"], "metricaPrincipal": "mensajes", "activo": true }
+  ],
+  "notas": "Las métricas principales y los giros son una propuesta inicial; Oscar los ajusta desde la plataforma. Los presupuestos mensuales se capturan después."
+}

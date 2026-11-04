@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Iniciar Sesión · Oscar Parra · Consultor de Marketing</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#262a34",
+            "on-tertiary-container": "#523200",
+            "on-background": "#dfe2ef",
+            "primary-fixed": "#6ffbbe",
+            "on-tertiary": "#472a00",
+            "on-surface-variant": "#bbcabf",
+            "on-primary-fixed-variant": "#005236",
+            "tertiary-fixed": "#ffddb8",
+            "outline-variant": "#3c4a42",
+            "surface-container-low": "#181b25",
+            "on-surface": "#dfe2ef",
+            "surface-container-highest": "#31353f",
+            "tertiary-container": "#e29100",
+            "on-error": "#690005",
+            "on-secondary": "#00354a",
+            "surface-tint": "#4edea3",
+            "secondary-fixed": "#c4e7ff",
+            "on-secondary-fixed": "#001e2c",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary": "#7bd0ff",
+            "surface-variant": "#31353f",
+            "on-tertiary-fixed": "#2a1700",
+            "primary": "#4edea3",
+            "inverse-on-surface": "#2c303a",
+            "surface-bright": "#353943",
+            "surface": "#0f131c",
+            "error": "#ffb4ab",
+            "error-container": "#93000a",
+            "surface-container-lowest": "#0a0e17",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed": "#002113",
+            "tertiary": "#ffb95f",
+            "inverse-primary": "#006c49",
+            "secondary-container": "#00a6e0",
+            "on-primary": "#003824",
+            "surface-container": "#1c1f29",
+            "on-primary-container": "#00422b",
+            "surface-dim": "#0f131c",
+            "primary-fixed-dim": "#4edea3",
+            "on-tertiary-fixed-variant": "#653e00",
+            "primary-container": "#10b981",
+            "background": "#0f131c",
+            "outline": "#86948a",
+            "on-secondary-fixed-variant": "#004c69",
+            "on-secondary-container": "#00374d",
+            "inverse-surface": "#dfe2ef",
+            "secondary-fixed-dim": "#7bd0ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "gutter": "1rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "2rem",
+            "gutter-lg": "1.5rem",
+            "margin-md": "1.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "metric-display": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-xs": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    }
+    .technical-grid {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+    }
+    .ambient-glow {
+      box-shadow: 0 0 24px -4px rgba(16, 185, 129, 0.22);
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen flex flex-col justify-between technical-grid relative selection:bg-primary selection:text-on-primary font-body-md text-body-md overflow-x-hidden">
+<!-- Glow orb ambient background -->
+<div class="fixed top-0 left-1/2 -translate-x-1/2 w-[700px] h-[340px] bg-primary/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-0 right-1/4 w-[500px] h-[300px] bg-secondary-container/5 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+<!-- Minimal Top Header for Authentication Context (Suppressed global full shell per transactional rule) -->
+<header class="w-full max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="h-9 w-auto flex items-center">
+<img alt="Oscar Parra Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XDsxM6hqT565ep_duS2WVQ229xOv3JJ03g8BYAtg_OoRdpDB7ZqKa9hD_BZ808PKsHUb7ZuM2kaRuZeZkg6owGB1jiPcMtHFR1fhBH3swkNfMlhZDaK5j9KrhaIT4HDO4BlJ-cltSBioZJ3lN1rIUvR72D6kHP0Q35WpjFaKWdk92_29h77oCdjlgYxvRwTjbh__3pfcDnJfxBhJmpgMIuZ2aYh7VJ9R1cLjQSy0a-"/>
+</div>
+<div class="h-4 w-px bg-outline-variant/40 hidden sm:block"></div>
+<span class="hidden sm:inline-block font-label-md text-label-md text-on-surface-variant tracking-normal">
+        Performance Engine
+      </span>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-primary/40 transition-colors duration-150 font-label-md text-label-md" href="https://wa.me/message" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px]" data-icon="help">help</span>
+<span>Soporte</span>
+</a>
+</div>
+</header>
+<!-- Main Canvas Container -->
+<main class="w-full flex-1 flex items-center justify-center px-4 py-8 sm:px-6">
+<div class="w-full max-w-[480px]">
+<!-- Brand & Title Block -->
+<div class="text-center mb-8">
+<div class="inline-flex items-center justify-center p-2 mb-4 rounded-xl bg-surface-container border border-outline-variant/20 shadow-inner">
+<img alt="Oscar Parra" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XDsxM6hqT565ep_duS2WVQ229xOv3JJ03g8BYAtg_OoRdpDB7ZqKa9hD_BZ808PKsHUb7ZuM2kaRuZeZkg6owGB1jiPcMtHFR1fhBH3swkNfMlhZDaK5j9KrhaIT4HDO4BlJ-cltSBioZJ3lN1rIUvR72D6kHP0Q35WpjFaKWdk92_29h77oCdjlgYxvRwTjbh__3pfcDnJfxBhJmpgMIuZ2aYh7VJ9R1cLjQSy0a-"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Oscar Parra · Consultor de Marketing
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5">
+          Plataforma de campañas para agencias y negocios
+        </p>
+</div>
+<!-- Auth Master Card -->
+<div class="glass-card rounded-xl p-6 sm:p-8 relative overflow-hidden">
+<!-- Top border indicator bar -->
+<div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-60"></div>
+<!-- 1. Google OAuth Button -->
+<button class="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-lg bg-surface-container hover:bg-surface-bright border border-outline-variant/40 hover:border-outline-variant/80 text-on-surface font-headline-md text-[14px] transition-all duration-150 active:scale-[0.99] group shadow-sm" type="button">
+<!-- Google G Logo SVG -->
+<svg class="w-4 h-4 shrink-0 transition-transform duration-150 group-hover:scale-105" viewbox="0 0 24 24">
+<path d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" fill="#4285F4"></path>
+<path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z" fill="#34A853"></path>
+<path d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z" fill="#FBBC05"></path>
+<path d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" fill="#EA4335"></path>
+</svg>
+<span class="tracking-tight text-on-surface font-medium">Continuar con Google</span>
+</button>
+<!-- Divider -->
+<div class="relative flex items-center justify-center my-6">
+<div class="border-t border-outline-variant/30 w-full"></div>
+<span class="bg-surface px-3 font-label-xs text-label-xs text-on-surface-variant tracking-wider uppercase whitespace-nowrap">
+            o accede con tu correo registrado
+          </span>
+<div class="border-t border-outline-variant/30 w-full"></div>
+</div>
+<!-- Form for Magic Link -->
+<form class="space-y-4" id="magicLinkForm" onsubmit="event.preventDefault(); triggerCheck();">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="emailInput">
+              Correo corporativo de la agencia
+            </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-outline" data-icon="mail">mail</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant/40 rounded-lg text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-150" id="emailInput" placeholder="ejemplo@agencia.com" required="" type="email" value="diego@agenciacreativa.co"/>
+</div>
+</div>
+<!-- Submit Magic Link Button -->
+<button class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container font-headline-md text-[14px] transition-all duration-150 active:scale-[0.99] ambient-glow shadow-md" type="submit">
+<span>Enviarme un link de acceso</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+</button>
+<!-- Microcopy Security -->
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center pt-1 px-2 leading-relaxed">
+            Te enviaremos un enlace mágico seguro de un solo uso a tu bandeja de entrada. Sin contraseñas que recordar.
+          </p>
+</form>
+<!-- Dynamic Feedback State: 'Esta cuenta no tiene acceso todavía' -->
+<div class="mt-6 pt-5 border-t border-outline-variant/30" id="noAccessCallout">
+<div class="p-4 rounded-xl bg-surface-container-low border border-tertiary-container/30 relative">
+<div class="flex items-start gap-3">
+<div class="p-1 rounded-lg bg-tertiary-container/20 text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock_clock">lock_clock</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-[13px] text-on-surface leading-tight">
+                    Esta cuenta no tiene acceso todavía
+                  </h3>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-xs bg-tertiary/10 text-tertiary border border-tertiary/20">
+                    Acceso Restringido
+                  </span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1.5 leading-snug">
+                  El correo ingresado no forma parte de ningún espacio de trabajo activo o agencia colaboradora.
+                </p>
+<!-- Action: WhatsApp Contact directly to Oscar Parra -->
+<div class="mt-3.5">
+<a class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-[#052b14] font-label-md text-label-md font-semibold transition-all duration-150 active:scale-95 shadow-sm" href="https://wa.me/34600000000?text=Hola%20Oscar,%20quisiera%20solicitar%20acceso%20a%20la%20plataforma%20de%20campa%C3%B1as%20para%20mi%20agencia." rel="noopener" target="_blank">
+<!-- WhatsApp SVG Icon -->
+<svg class="w-4 h-4 fill-current shrink-0" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg>
+<span>Pedir acceso por WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Badges & Telemetry status -->
+<div class="mt-6 flex flex-col items-center justify-center gap-2 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/20 font-label-xs text-label-xs text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>Sincronizado con Meta Graph API v20.0 · Cifrado punto a punto</span>
+</div>
+<p class="font-body-sm text-[11px] text-outline">
+          Acceso estrictamente aprovisionado por invitación directa.
+        </p>
+</div>
+</div>
+</main>
+<!-- Docked Minimal Footer (Semantic Shell Component) -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface">
+<div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-4 gap-3 text-center md:text-left">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+        © 2025 Oscar Parra · Consultor de Marketing. Plataforma de campañas para agencias y negocios.
+      </span>
+<div class="flex items-center gap-4 font-label-xs text-label-xs">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#terminos">Términos de servicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#privacidad">Privacidad</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-150" href="#contacto">Contacto</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction Demo Script -->
+<script>
+    function triggerCheck() {
+      const emailInput = document.getElementById('emailInput');
+      const callout = document.getElementById('noAccessCallout');
+      
+      // Visual feedback demonstration
+      callout.classList.remove('opacity-100');
+      callout.classList.add('opacity-40');
+      
+      setTimeout(() => {
+        callout.classList.remove('opacity-40');
+        callout.classList.add('opacity-100');
+      }, 200);
+    }
+  </script>
+</body></html>

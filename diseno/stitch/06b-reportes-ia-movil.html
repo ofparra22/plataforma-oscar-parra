@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Jaque · Generador de Reporte con IA</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#002113",
+            "on-primary-container": "#00422b",
+            "error-container": "#93000a",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#4edea3",
+            "surface-dim": "#0f131c",
+            "tertiary-container": "#e29100",
+            "surface-bright": "#353943",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-surface": "#dfe2ef",
+            "on-surface-variant": "#bbcabf",
+            "error": "#ffb4ab",
+            "inverse-on-surface": "#2c303a",
+            "surface": "#0f131c",
+            "background": "#0f131c",
+            "on-surface": "#dfe2ef",
+            "inverse-primary": "#006c49",
+            "secondary-container": "#00a6e0",
+            "outline": "#86948a",
+            "secondary-fixed-dim": "#7bd0ff",
+            "on-tertiary": "#472a00",
+            "on-primary-fixed-variant": "#005236",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-container-lowest": "#0a0e17",
+            "on-error-container": "#ffdad6",
+            "primary-container": "#10b981",
+            "surface-container-low": "#181b25",
+            "surface-container-highest": "#31353f",
+            "primary": "#4edea3",
+            "on-secondary": "#00354a",
+            "on-secondary-container": "#00374d",
+            "surface-container-high": "#262a34",
+            "surface-tint": "#4edea3",
+            "on-tertiary-container": "#523200",
+            "on-secondary-fixed": "#001e2c",
+            "secondary-fixed": "#c4e7ff",
+            "tertiary": "#ffb95f",
+            "surface-container": "#1c1f29",
+            "on-background": "#dfe2ef",
+            "on-secondary-fixed-variant": "#004c69",
+            "primary-fixed": "#6ffbbe",
+            "on-primary": "#003824",
+            "outline-variant": "#3c4a42",
+            "secondary": "#7bd0ff",
+            "tertiary-fixed": "#ffddb8",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-variant": "#31353f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem",
+            "gutter-lg": "1.5rem",
+            "margin-md": "1.5rem",
+            "gutter": "1rem",
+            "margin-lg": "2rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem"
+          },
+          "fontFamily": {
+            "metric-display": ["Inter", "sans-serif"],
+            "headline-xl-mobile": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "label-xs": ["Inter", "sans-serif"],
+            "headline-xl": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "code": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "metric-display": [
+              "28px",
+              { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }
+            ],
+            "headline-xl-mobile": [
+              "28px",
+              { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }
+            ],
+            "headline-md": [
+              "18px",
+              { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }
+            ],
+            "body-md": [
+              "14px",
+              { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }
+            ],
+            "body-sm": [
+              "12px",
+              { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }
+            ],
+            "body-lg": [
+              "16px",
+              { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }
+            ],
+            "label-md": [
+              "12px",
+              { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }
+            ],
+            "label-xs": [
+              "10px",
+              { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }
+            ],
+            "headline-xl": [
+              "36px",
+              { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }
+            ],
+            "headline-lg": [
+              "24px",
+              { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }
+            ]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0a0e17;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #3c4a42;
+      border-radius: 4px;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md selection:bg-primary selection:text-on-primary-fixed min-h-screen flex justify-center">
+<!-- Mobile Viewport Container (Optimized for 390px canvas, fluid max 430px) -->
+<div class="w-full max-w-[430px] min-h-screen flex flex-col bg-surface-dim relative border-x border-outline-variant/30">
+<!-- TOP APP BAR (Shared Component Anchor) -->
+<header class="fixed top-0 left-0 right-0 max-w-[430px] mx-auto z-50 flex items-center justify-between px-space-md py-space-sm h-14 bg-surface-container-low border-b border-outline-variant">
+<!-- Leading Icon: Menu -->
+<div class="flex items-center gap-space-xs">
+<button aria-label="Abrir Menú" class="w-9 h-9 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<!-- Brand Logo / Headline -->
+<div class="flex items-center gap-1.5 pl-1">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Jaque</span>
+</div>
+</div>
+<!-- Account Selector & Meta Status Sync -->
+<div class="flex items-center gap-space-xs">
+<!-- Sub-account Micro Selector -->
+<button class="flex items-center gap-1.5 px-2.5 py-1 bg-surface-container rounded-xl border border-outline-variant/50 active:scale-95 transition-transform text-left" type="button">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-on-surface font-semibold truncate max-w-[110px] leading-tight">Colegio Excélsior</span>
+<span class="font-label-xs text-[9px] text-on-surface-variant leading-none tracking-tight">act_89210349</span>
+</div>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">expand_more</span>
+</button>
+<!-- Trailing Sync / Meta API Badge -->
+<button aria-label="Sincronizar Meta Ads" class="w-8 h-8 flex items-center justify-center rounded-xl bg-surface-container-high/60 text-primary border border-primary/20 hover:bg-surface-container-high active:scale-95 transition-all" title="Meta Ads v20.0 Sincronizado" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="flex-1 pt-16 pb-28 px-space-md flex flex-col gap-space-md">
+<!-- HERO CONTEXT SECTION -->
+<section class="flex flex-col gap-space-xs pt-2">
+<!-- Category Chip & Synced status -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container border border-outline-variant/60">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-xs text-label-xs font-semibold text-primary uppercase tracking-wider">HERRAMIENTA IA · REPORTE MENSUAL</span>
+</div>
+<span class="font-label-xs text-[10px] text-on-surface-variant font-medium">Meta Ads v20.0</span>
+</div>
+<!-- Page Headline & Subtitle -->
+<div>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-on-surface">Generador de Reporte con IA</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Reporte ejecutivo calibrado para dirección escolar y retorno publicitario.
+          </p>
+</div>
+<!-- Compact Metadata Badges -->
+<div class="flex flex-wrap items-center gap-space-xs mt-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-surface-container rounded-lg border border-outline-variant/40 font-label-xs text-label-xs text-on-surface">
+<span class="material-symbols-outlined text-[12px] text-secondary">calendar_today</span>
+            Octubre 2024
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-surface-container rounded-lg border border-outline-variant/40 font-label-xs text-label-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">tag</span>
+            act_89210349
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 bg-primary/10 rounded-lg border border-primary/30 font-label-xs text-label-xs text-primary font-medium">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+            100% Gasto Ejecutado
+          </span>
+</div>
+</section>
+<!-- SECTION 1: COMPACT CONFIGURATION & HORIZONTAL FILTERS -->
+<section class="flex flex-col gap-space-sm">
+<!-- Horizontal Scrollable Pill Filters -->
+<div class="flex items-center gap-space-xs overflow-x-auto hide-scrollbar py-0.5 -mx-1 px-1">
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-transform" type="button">
+<span>📅</span>
+<span>Octubre 2024</span>
+</button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-transform" type="button">
+<span>🎯</span>
+<span class="text-primary font-semibold">Tono Ejecutivo</span>
+</button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-transform" type="button">
+<span>📊</span>
+<span>4 Métricas</span>
+</button>
+<button class="whitespace-nowrap px-3 py-1.5 rounded-full bg-surface-container-high border border-outline-variant text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-transform" type="button">
+<span>🏫</span>
+<span>Colegio Excélsior</span>
+</button>
+</div>
+<!-- Stylized Collapsible Accordion Card -->
+<details class="group bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden">
+<summary class="flex items-center justify-between p-3.5 cursor-pointer list-none select-none hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="text-[14px]">⚙️</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Configurar reporte (Filtros y canales)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform duration-200">expand_more</span>
+</summary>
+<div class="px-3.5 pb-4 pt-1 flex flex-col gap-3 border-t border-outline-variant/50 bg-surface-container-lowest/60">
+<!-- Range and Tone selectors -->
+<div class="grid grid-cols-2 gap-2 pt-2">
+<div>
+<label class="block font-label-xs text-label-xs text-on-surface-variant mb-1">Rango de Fechas</label>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-2 text-on-surface font-body-sm text-body-sm flex items-center justify-between">
+<span>Mes cerrado (Oct)</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">calendar_month</span>
+</div>
+</div>
+<div>
+<label class="block font-label-xs text-label-xs text-on-surface-variant mb-1">Tono del Reporte</label>
+<div class="bg-surface-container-lowest border border-primary/40 rounded-lg p-2 text-primary font-body-sm text-body-sm font-medium flex items-center justify-between">
+<span>Ejecutivo</span>
+<span class="material-symbols-outlined text-[14px] text-primary">check</span>
+</div>
+</div>
+</div>
+<!-- Tonal selector segmented chips -->
+<div class="flex items-center gap-1.5 p-1 bg-surface-container-lowest rounded-lg border border-outline-variant/60">
+<button class="flex-1 py-1 text-center font-label-xs text-label-xs rounded bg-primary-container text-on-primary-container font-semibold" type="button">Ejecutivo</button>
+<button class="flex-1 py-1 text-center font-label-xs text-label-xs rounded text-on-surface-variant hover:text-on-surface" type="button">Explicativo</button>
+<button class="flex-1 py-1 text-center font-label-xs text-label-xs rounded text-on-surface-variant hover:text-on-surface" type="button">Estratégico</button>
+</div>
+<!-- Tactile Checkboxes -->
+<div class="flex flex-col gap-2 pt-1">
+<label class="flex items-center gap-2.5 cursor-pointer">
+<input checked="" class="rounded border-outline text-primary focus:ring-0 bg-surface-container-lowest w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Métricas clave consolidadas (Inversión, CPL, Leads)</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer">
+<input checked="" class="rounded border-outline text-primary focus:ring-0 bg-surface-container-lowest w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Top 3 Anuncios con mayor CTR</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer">
+<input checked="" class="rounded border-outline text-primary focus:ring-0 bg-surface-container-lowest w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Desglose de canales (Meta Ads + Instagram Reels)</span>
+</label>
+</div>
+</div>
+</details>
+<!-- Regenerate Button with Emerald Sparks -->
+<button class="w-full py-2.5 px-4 rounded-xl bg-surface-container border border-primary/30 hover:border-primary text-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-[0_0_12px_rgba(16,185,129,0.08)] active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>⚡ Regenerar Prompt con IA</span>
+</button>
+<!-- 2x2 Telemetry Metric Grid for Mobile -->
+<div class="grid grid-cols-2 gap-2 mt-1">
+<!-- Card 1: Inversión -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Inversión Ejecutada</span>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">$15,400 <span class="font-label-xs text-[10px] text-on-surface-variant font-normal">MXN</span></div>
+<div class="font-label-xs text-[10px] text-primary mt-1 font-medium">100% del presupuesto</div>
+</div>
+<!-- Card 2: Leads -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Leads Formularios</span>
+<span class="inline-flex items-center text-[10px] text-primary font-semibold">+15%</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">240 <span class="font-label-xs text-[10px] text-on-surface-variant font-normal">leads</span></div>
+<div class="font-label-xs text-[10px] text-on-surface-variant mt-1">Calificados instantáneos</div>
+</div>
+<!-- Card 3: CPL Promedio -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Costo por Lead (CPL)</span>
+<span class="inline-flex items-center text-[10px] text-primary font-semibold">-8.4%</span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">$64.16 <span class="font-label-xs text-[10px] text-on-surface-variant font-normal">MXN</span></div>
+<div class="font-label-xs text-[10px] text-primary mt-1 font-medium">Reducción costo adq.</div>
+</div>
+<!-- Card 4: Mejor Campaña -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Top Campaña</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary">star</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-on-surface truncate tracking-tight">Inscrip_Otoño_V3</div>
+<div class="font-label-xs text-[10px] text-on-surface-variant mt-1">162 leads · CPL $54.20</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: GENERATED PROMPT BOX (Code Terminal Style) -->
+<section class="flex flex-col gap-space-xs mt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
+            Salida de Prompt Estructurado
+          </span>
+<span class="font-label-xs text-[10px] px-2 py-0.5 rounded bg-primary/10 text-primary font-medium border border-primary/20">
+            Formato Markdown
+          </span>
+</div>
+<!-- Terminal Shell Container -->
+<div class="rounded-xl border border-outline-variant/80 bg-surface-container-lowest overflow-hidden shadow-2xl flex flex-col">
+<!-- Terminal macOS Header -->
+<div class="flex items-center justify-between px-3 py-2.5 bg-surface-container-low border-b border-outline-variant/60">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#ef4444]/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#f59e0b]/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#10b981]/80"></span>
+<span class="font-label-xs text-[11px] text-on-surface-variant font-medium ml-1">Prompt Optimizado para LLM</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] bg-primary/15 text-primary border border-primary/30 font-semibold tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                Listo para copiar
+              </span>
+</div>
+</div>
+<!-- Prompt Verbatim Content Scrollable Area -->
+<div class="p-3.5 max-h-[340px] overflow-y-auto custom-scrollbar font-code text-[12px] leading-relaxed text-on-surface/90 selection:bg-primary-container selection:text-on-primary-container">
+<p class="text-primary font-medium mb-2.5">
+              Actúa como un Account Manager Senior de Jaque Marketing. Redacta un reporte mensual para nuestro cliente 'Colegio Excélsior'. El tono debe ser Ejecutivo (directo al punto, profesional, sin tecnicismos innecesarios). Aquí están los datos del mes de Octubre 2024 extraídos de Meta Ads Manager:
+            </p>
+<ul class="space-y-1.5 text-on-surface-variant pl-1 border-l border-outline-variant/60 my-2">
+<li class="pl-2"><span class="text-on-surface font-semibold">- Inversión total ejecutada:</span> $15,400.00 MXN (100% del presupuesto acordado).</li>
+<li class="pl-2"><span class="text-on-surface font-semibold">- Leads generados (Formularios instantáneos):</span> 240 leads calificados (+15% vs mes anterior).</li>
+<li class="pl-2"><span class="text-on-surface font-semibold">- Costo por Lead promedio (CPL):</span> $64.16 MXN (-8.4% de reducción en costo de adquisición).</li>
+<li class="pl-2"><span class="text-on-surface font-semibold">- Campaña más exitosa:</span> 'Inscripciones_Otoño_V3' con 162 leads a un CPL de $54.20 MXN.</li>
+<li class="pl-2"><span class="text-on-surface font-semibold">- Top 3 creativos con mejor CTR:</span> 1) Reel_Campus_Cumbres (3.2%), 2) Banner_Becas2025 (2.1%), 3) Testimonial_Padres (1.9%).</li>
+<li class="pl-2"><span class="text-on-surface font-semibold">- Audiencias clave:</span> Padres con hijos en edad escolar (30-50 años) en San Pedro Garza García y Monterrey Poniente.</li>
+</ul>
+<p class="text-on-surface mt-3 mb-1.5 font-medium">
+              Por favor, estructura el reporte para el cliente final en:
+            </p>
+<ol class="space-y-1 text-on-surface-variant pl-4 list-decimal">
+<li>Resumen Ejecutivo (Principales logros y retorno de inversión)</li>
+<li>Desglose de Datos y Rendimiento de Campañas</li>
+<li>Análisis del Top 3 de Anuncios Ganadores</li>
+<li>Siguientes Pasos y Recomendaciones para Noviembre (Cierre de admisiones ciclo 2025).</li>
+</ol>
+</div>
+<!-- Terminal Footer Metrics -->
+<div class="px-3 py-2 bg-surface-container-low/80 border-t border-outline-variant/60 flex items-center justify-between">
+<span class="font-label-xs text-[10px] text-on-surface-variant">
+              928 caracteres · 137 palabras · Markdown
+            </span>
+<button class="text-primary hover:text-primary-fixed flex items-center gap-1 font-label-xs text-label-xs active:scale-95 transition-transform" id="inline-copy-btn" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copiar</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 3: SECONDARY LLM SHORTCUT BUTTONS -->
+<section class="flex flex-col gap-space-xs mt-1">
+<label class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider font-semibold">
+          Abrir directamente en tu IA preferida
+        </label>
+<!-- 2x2 Action Grid -->
+<div class="grid grid-cols-2 gap-2">
+<!-- ChatGPT -->
+<a class="p-2.5 rounded-xl bg-surface-container border border-outline-variant/60 hover:border-outline hover:bg-surface-container-high flex items-center justify-between text-on-surface group active:scale-95 transition-all" href="https://chatgpt.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-lg bg-[#10a37f]/20 text-[#10a37f] flex items-center justify-center font-bold text-xs">
+                ⚡
+              </div>
+<span class="font-label-md text-label-md font-medium group-hover:text-primary transition-colors">ChatGPT</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-on-surface">north_east</span>
+</a>
+<!-- Claude -->
+<a class="p-2.5 rounded-xl bg-surface-container border border-outline-variant/60 hover:border-outline hover:bg-surface-container-high flex items-center justify-between text-on-surface group active:scale-95 transition-all" href="https://claude.ai" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-lg bg-[#d97706]/20 text-[#d97706] flex items-center justify-center font-bold text-xs">
+                ✦
+              </div>
+<span class="font-label-md text-label-md font-medium group-hover:text-primary transition-colors">Claude</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-on-surface">north_east</span>
+</a>
+<!-- Gemini -->
+<a class="p-2.5 rounded-xl bg-surface-container border border-outline-variant/60 hover:border-outline hover:bg-surface-container-high flex items-center justify-between text-on-surface group active:scale-95 transition-all" href="https://gemini.google.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center font-bold text-xs">
+                ✧
+              </div>
+<span class="font-label-md text-label-md font-medium group-hover:text-primary transition-colors">Gemini</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-on-surface">north_east</span>
+</a>
+<!-- Descargar Anexo PDF -->
+<button class="p-2.5 rounded-xl bg-surface-container border border-outline-variant/60 hover:border-outline hover:bg-surface-container-high flex items-center justify-between text-on-surface group active:scale-95 transition-all" type="button">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">description</span>
+</div>
+<span class="font-label-md text-label-md font-medium group-hover:text-primary transition-colors">Anexo PDF</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-on-surface">download</span>
+</button>
+</div>
+</section>
+</main>
+<!-- SECTION 4: STICKY BOTTOM ACTION BAR (Touch Thumb-Zone Optimized) -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto z-40 bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant/80 px-4 pt-2.5 pb-4 flex flex-col gap-1.5 shadow-[0_-8px_20px_rgba(0,0,0,0.5)]">
+<!-- Main High-Priority Action Button -->
+<button class="w-full h-12 bg-primary-container text-on-primary-container font-headline-md text-[15px] font-bold rounded-xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all" id="copy-primary-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+<span id="btn-text">Copiar Prompt</span>
+</button>
+<!-- Confirmation / Helper Micro-Badge -->
+<div class="flex items-center justify-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-xs text-[11px] text-on-surface-variant font-medium" id="confirmation-text">¡Listo para pegar en tu IA! · 928 caracteres</span>
+</div>
+</div>
+</div>
+<!-- Inline Script for Copy-to-Clipboard Interactions -->
+<script>
+    const promptText = `Act\u00faa como un Account Manager Senior de Jaque Marketing. Redacta un reporte mensual para nuestro cliente 'Colegio Exc\u00e9lsior'. El tono debe ser Ejecutivo (directo al punto, profesional, sin tecnicismos innecesarios). Aqu\u00ed est\u00e1n los datos del mes de Octubre 2024 extra\u00eddos de Meta Ads Manager:
+- Inversi\u00f3n total ejecutada: $15,400.00 MXN (100% del presupuesto acordado).
+- Leads generados (Formularios instant\u00e1neos): 240 leads calificados (+15% vs mes anterior).
+- Costo por Lead promedio (CPL): $64.16 MXN (-8.4% de reducci\u00f3n en costo de adquisici\u00f3n).
+- Campa\u00f1a m\u00e1s exitosa: 'Inscripciones_Oto\u00f1o_V3' con 162 leads a un CPL de $54.20 MXN.
+- Top 3 creativos con mejor CTR: 1) Reel_Campus_Cumbres (3.2%), 2) Banner_Becas2025 (2.1%), 3) Testimonial_Padres (1.9%).
+- Audiencias clave: Padres con hijos en edad escolar (30-50 a\u00f1os) en San Pedro Garza Garc\u00eda y Monterrey Poniente.
+
+Por favor, estructura el reporte para el cliente final en:
+1. Resumen Ejecutivo (Principales logros y retorno de inversi\u00f3n)
+2. Desglose de Datos y Rendimiento de Campa\u00f1as
+3. An\u00e1lisis del Top 3 de Anuncios Ganadores
+4. Siguientes Pasos y Recomendaciones para Noviembre (Cierre de admisiones ciclo 2025).`;
+
+    function triggerCopy(btnElement, textElement, confirmElement) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(promptText).catch(() => {});
+      }
+      
+      const originalText = textElement.textContent;
+      textElement.textContent = "¡Copiado con Éxito!";
+      
+      if (confirmElement) {
+        confirmElement.textContent = "✓ Prompt copiado al portapapeles";
+        confirmElement.classList.add("text-primary");
+      }
+      
+      setTimeout(() => {
+        textElement.textContent = originalText;
+        if (confirmElement) {
+          confirmElement.textContent = "¡Listo para pegar en tu IA! · 928 caracteres";
+          confirmElement.classList.remove("text-primary");
+        }
+      }, 2500);
+    }
+
+    const mainBtn = document.getElementById("copy-primary-btn");
+    const mainBtnText = document.getElementById("btn-text");
+    const confirmLabel = document.getElementById("confirmation-text");
+    const inlineBtn = document.getElementById("inline-copy-btn");
+
+    if (mainBtn) {
+      mainBtn.addEventListener("click", () => triggerCopy(mainBtn, mainBtnText, confirmLabel));
+    }
+    if (inlineBtn) {
+      inlineBtn.addEventListener("click", () => triggerCopy(inlineBtn, inlineBtn.querySelector("span:last-child"), confirmLabel));
+    }
+  </script>
+</body></html>

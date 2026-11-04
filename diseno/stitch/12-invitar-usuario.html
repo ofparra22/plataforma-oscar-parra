@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jaque Marketing - Usuarios y Accesos</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#93000a",
+            "on-tertiary": "#472a00",
+            "surface-container": "#1c1f29",
+            "on-tertiary-fixed": "#2a1700",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container-lowest": "#0a0e17",
+            "primary-fixed": "#6ffbbe",
+            "on-background": "#dfe2ef",
+            "on-secondary-fixed": "#001e2c",
+            "outline": "#86948a",
+            "surface": "#0f131c",
+            "primary-container": "#10b981",
+            "on-tertiary-container": "#523200",
+            "surface-dim": "#0f131c",
+            "outline-variant": "#3c4a42",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary": "#7bd0ff",
+            "background": "#0f131c",
+            "error": "#ffb4ab",
+            "inverse-surface": "#dfe2ef",
+            "surface-container-high": "#262a34",
+            "on-error": "#690005",
+            "surface-container-highest": "#31353f",
+            "secondary-fixed": "#c4e7ff",
+            "surface-tint": "#4edea3",
+            "on-primary-fixed-variant": "#005236",
+            "tertiary-container": "#e29100",
+            "surface-variant": "#31353f",
+            "secondary-fixed-dim": "#7bd0ff",
+            "on-secondary": "#00354a",
+            "on-primary-container": "#00422b",
+            "on-secondary-container": "#00374d",
+            "on-primary-fixed": "#002113",
+            "inverse-on-surface": "#2c303a",
+            "surface-bright": "#353943",
+            "primary": "#4edea3",
+            "on-surface": "#dfe2ef",
+            "surface-container-low": "#181b25",
+            "on-primary": "#003824",
+            "on-surface-variant": "#bbcabf",
+            "primary-fixed-dim": "#4edea3",
+            "on-secondary-fixed-variant": "#004c69",
+            "secondary-container": "#00a6e0",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#653e00",
+            "tertiary": "#ffb95f",
+            "inverse-primary": "#006c49"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "1.5rem",
+            "margin-md": "1.5rem",
+            "space-md": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "gutter": "1rem",
+            "gutter-lg": "1.5rem",
+            "margin": "1rem",
+            "margin-lg": "2rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "metric-display": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "label-xs": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md text-body-md antialiased min-h-screen flex selection:bg-primary selection:text-on-primary-container">
+<!-- ========================================================================= -->
+<!-- 1. GLOBAL SHELL: SideNavBar (Shared Component Anchor)                     -->
+<!-- ========================================================================= -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 flex flex-col p-space-md bg-surface border-r border-outline-variant select-none">
+<!-- Brand Header -->
+<div class="flex items-center gap-space-sm px-space-sm py-space-sm mb-space-lg">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center border border-outline-variant shadow-inner">
+<span class="material-symbols-outlined text-primary" data-icon="token" style="font-variation-settings: 'FILL' 1;">token</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight leading-none">Jaque Marketing</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium tracking-wide">Meta Ads Sync Activo · v20.0</span>
+</div>
+</div>
+</div>
+<!-- Quick CTA Action -->
+<div class="px-space-xs mb-space-lg">
+<button class="w-full flex items-center justify-center gap-space-xs py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant text-label-md font-label-md transition-colors duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-primary text-base" data-icon="sync">sync</span>
+<span>Sincronizar Datos</span>
+</button>
+</div>
+<!-- Main Navigation Items -->
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Inicio</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="travel_explore">travel_explore</span>
+<span class="font-label-md text-label-md">Explorar</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Reportes</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="assignment">assignment</span>
+<span class="font-label-md text-label-md">Solicitudes</span>
+</a>
+</nav>
+<!-- Footer Navigation & Profile Anchor -->
+<div class="pt-space-md border-t border-outline-variant flex flex-col gap-1">
+<!-- Active Settings Item (Matches page context: Usuarios y Accesos) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-medium border-l-2 border-primary active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md">Ajustes</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="headset_mic">headset_mic</span>
+<span class="font-label-md text-label-md">Soporte Técnico</span>
+</a>
+<!-- Current Logged User Card -->
+<div class="mt-space-md pt-space-sm px-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest border border-primary/40 flex items-center justify-center text-primary font-headline-md text-sm font-bold shadow-sm">
+            CM
+          </div>
+<div class="flex flex-col overflow-hidden">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Carlos Mendoza</span>
+<span class="font-label-xs text-label-xs text-primary truncate">Admin de Agencia</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1" title="Cerrar sesión">
+<span class="material-symbols-outlined text-base" data-icon="logout">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- 2. GLOBAL SHELL: TopNavBar (Shared Component Anchor)                      -->
+<!-- ========================================================================= -->
+<header class="fixed top-0 right-0 left-64 h-16 z-30 flex items-center justify-between px-space-xl backdrop-blur-md bg-surface/90 border-b border-outline-variant">
+<!-- Breadcrumbs & Account Selector -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span>Ajustes</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-medium">Usuarios y Accesos</span>
+</div>
+<div class="h-4 w-px bg-outline-variant mx-1"></div>
+<!-- Workspace / Sub-account selector pill -->
+<div class="flex items-center gap-space-xs px-2.5 py-1 rounded bg-surface-container border border-outline-variant/60 hover:border-outline-variant transition-colors cursor-pointer text-xs font-label-md text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-medium">Colegio Excélsior · act_89210349</span>
+<span class="material-symbols-outlined text-sm text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Trailing Action Badges & Notifications -->
+<div class="flex items-center gap-space-md">
+<!-- Sync Status Badge -->
+<div class="hidden lg:flex items-center gap-1.5 px-2 py-1 rounded bg-primary-container/10 border border-primary/20 text-primary font-label-xs text-label-xs font-medium">
+<span class="material-symbols-outlined text-xs animate-spin" data-icon="sync">sync</span>
+<span>Meta Ads API: Online (24ms)</span>
+</div>
+<!-- Notifications Icon -->
+<button class="relative p-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Notificaciones">
+<span class="material-symbols-outlined text-lg" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary border-2 border-surface"></span>
+</button>
+<!-- Account Switcher Profile Pill -->
+<div class="flex items-center gap-2 pl-2 border-l border-outline-variant">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center font-label-md font-semibold text-xs text-on-surface">
+          RG
+        </div>
+<div class="hidden xl:flex flex-col text-left">
+<span class="text-xs font-medium text-on-surface leading-none">Roberto G.</span>
+<span class="text-[10px] text-on-surface-variant leading-none mt-1">Super Admin</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- 3. MAIN WORKSPACE CANVAS                                                  -->
+<!-- ========================================================================= -->
+<main class="ml-64 mt-16 flex-1 p-space-xl bg-surface-container-lowest min-h-[calc(100vh-4rem)] flex flex-col">
+<!-- Page Header & Main Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-xl pb-space-lg border-b border-outline-variant/60">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="manage_accounts">manage_accounts</span>
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-primary font-semibold">Gobernanza y Permisos</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Usuarios y Accesos</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+          Gestiona los permisos del equipo interno de la agencia y los accesos de clientes finales a sus sub-cuentas.
+        </p>
+</div>
+<!-- Primary Action CTA -->
+<div class="flex items-center gap-3">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface border border-outline-variant font-label-md text-label-md flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-base" data-icon="download">download</span>
+<span>Exportar Auditoría</span>
+</button>
+<button class="px- space-lg py-2.5 px-4 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-[0_0_16px_-2px_rgba(16,185,129,0.3)] transition-all duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-base font-bold" data-icon="person_add">person_add</span>
+<span>+ Invitar Usuario</span>
+</button>
+</div>
+</div>
+<!-- Search, Filters and Density Metrics Bar -->
+<div class="bg-surface border border-outline-variant/80 rounded-xl p-space-md mb-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md shadow-sm">
+<div class="flex flex-1 items-center gap-space-md w-full md:w-auto">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-0 transition-colors" placeholder="Buscar por nombre, correo o cliente..." type="text"/>
+</div>
+<!-- Role Filter Dropdown -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg pl-3 pr-8 py-2 text-body-sm font-label-md text-on-surface focus:outline-none focus:border-primary focus:ring-0 cursor-pointer">
+<option>Todos los roles</option>
+<option>Admin de Agencia</option>
+<option>Media Buyer</option>
+<option>Cliente Final</option>
+<option>Lector</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline text-sm pointer-events-none" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+<!-- Quick Metrics Counter Badges -->
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant/60 font-body-sm text-body-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface font-medium">8</span>
+<span class="text-on-surface-variant">usuarios activos</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant/60 font-body-sm text-body-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-on-surface font-medium">2</span>
+<span class="text-on-surface-variant">invitaciones pendientes</span>
+</div>
+</div>
+</div>
+<!-- ======================================================================= -->
+<!-- SECTION 1: USERS DATA TABLE (HIGH DENSITY TELEMETRY)                    -->
+<!-- ======================================================================= -->
+<div class="bg-surface border border-outline-variant/80 rounded-xl overflow-hidden shadow-2xl flex-1 flex flex-col">
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider">
+<th class="py-3 px-4 font-semibold">Usuario / Nombre</th>
+<th class="py-3 px-4 font-semibold">Correo electrónico</th>
+<th class="py-3 px-4 font-semibold">Rol</th>
+<th class="py-3 px-4 font-semibold">Cuentas Asignadas</th>
+<th class="py-3 px-4 font-semibold">Último acceso</th>
+<th class="py-3 px-4 font-semibold">Estado</th>
+<th class="py-3 px-4 font-semibold text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/40 font-body-sm text-body-sm">
+<!-- Row 1: Carlos Mendoza -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-primary/40 flex items-center justify-center font-bold text-xs text-primary">
+                    CM
+                  </div>
+<div>
+<div class="font-medium text-on-surface group-hover:text-primary transition-colors">Carlos Mendoza</div>
+<div class="text-[11px] text-on-surface-variant">Lead Account Manager</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs">
+                carlos@jaquemarketing.com
+              </td>
+<td class="py-3 px-4">
+<!-- Admin Badge: Purple/Violet Tone -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#5b21b6]/20 border border-[#8b5cf6]/40 text-[#c4b5fd]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#a78bfa]"></span>
+                  Admin de Agencia
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5 text-on-surface font-medium">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="apps">apps</span>
+<span>Todas las sub-cuentas (8)</span>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">
+                Hace 15 min
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-primary/10 border border-primary/30 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                  Activo
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Roberto G. -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-secondary/40 flex items-center justify-center font-bold text-xs text-secondary">
+                    RG
+                  </div>
+<div>
+<div class="font-medium text-on-surface group-hover:text-primary transition-colors">Roberto G.</div>
+<div class="text-[11px] text-on-surface-variant">Senior Media Buyer</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs">
+                roberto.g@jaquemarketing.com
+              </td>
+<td class="py-3 px-4">
+<!-- Media Buyer: Emerald Teal Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 border border-primary/30 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Media Buyer
+                </span>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5 text-on-surface font-medium">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="apps">apps</span>
+<span>Todas las sub-cuentas (8)</span>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">
+                Ayer 18:42
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-primary/10 border border-primary/30 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Activo
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Lic. Fernando Garza (WITH EXPANDED CONTEXTUAL ACTIONS) -->
+<tr class="bg-surface-container-high/40 hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#00354a] border border-secondary/40 flex items-center justify-center font-bold text-xs text-secondary">
+                    FG
+                  </div>
+<div>
+<div class="font-medium text-on-surface">Lic. Fernando Garza</div>
+<div class="text-[11px] text-on-surface-variant">Director General · Colegio Excélsior</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs">
+                director@colegioexcelsior.edu.mx
+              </td>
+<td class="py-3 px-4">
+<!-- Cliente Final: Cyan Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0369a1]/20 border border-secondary/30 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Cliente Final
+                </span>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container border border-outline-variant text-xs text-on-surface">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="school">school</span>
+                  Solo Colegio Excélsior
+                </span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">
+                Hoy 09:15
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-primary/10 border border-primary/30 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Activo
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<!-- Explicit Action Trigger and Popover simulation -->
+<div class="flex items-center justify-end gap-2">
+<button class="px-2 py-1 rounded bg-error-container/20 hover:bg-error-container/40 border border-error/20 text-error text-[11px] font-medium flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-xs" data-icon="person_remove">person_remove</span>
+<span>Revocar acceso</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Dra. Marcela Ramos -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center font-bold text-xs text-on-surface">
+                    MR
+                  </div>
+<div>
+<div class="font-medium text-on-surface">Dra. Marcela Ramos</div>
+<div class="text-[11px] text-on-surface-variant">Administradora · Clínica San José</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs">
+                marcela.ramos@clinicasanjose.com
+              </td>
+<td class="py-3 px-4">
+<!-- Cliente Final Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#0369a1]/20 border border-secondary/30 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Cliente Final
+                </span>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container border border-outline-variant text-xs text-on-surface">
+<span class="material-symbols-outlined text-xs text-secondary" data-icon="local_hospital">local_hospital</span>
+                  Solo Clínica San José
+                </span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">
+                Hace 3 días
+              </td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-primary/10 border border-primary/30 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Activo
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Andrés Morales -->
+<tr class="hover:bg-surface-container/60 transition-colors group">
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center font-bold text-xs text-on-surface-variant">
+                    AM
+                  </div>
+<div>
+<div class="font-medium text-on-surface">Andrés Morales</div>
+<div class="text-[11px] text-on-surface-variant">Practicante Media Buyer</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs">
+                andres.media@jaquemarketing.com
+              </td>
+<td class="py-3 px-4">
+<!-- Lector Badge: Neutral Gray -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-highest border border-outline-variant text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Lector
+                </span>
+</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container border border-outline-variant text-xs text-on-surface">
+<span class="material-symbols-outlined text-xs text-outline" data-icon="folder_shared">folder_shared</span>
+                  2 cuentas asignadas
+                </span>
+</td>
+<td class="py-3 px-4 text-outline italic">
+                Sin registrar
+              </td>
+<td class="py-3 px-4">
+<!-- Pendiente Badge: Amber Tone -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-tertiary-container/20 border border-tertiary/40 text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+                  Pendiente de aceptar
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Reenviar invitación">
+<span class="material-symbols-outlined text-base" data-icon="forward_to_inbox">forward_to_inbox</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Telemetry & Pagination -->
+<div class="px-space-md py-3 bg-surface-container-low border-t border-outline-variant flex items-center justify-between text-xs text-on-surface-variant">
+<span>Mostrando 5 de 10 cuentas registradas</span>
+<div class="flex items-center gap-2">
+<button class="px-2 py-1 rounded bg-surface border border-outline-variant hover:bg-surface-container text-on-surface disabled:opacity-40" disabled="">Anterior</button>
+<span class="px-2 font-medium text-on-surface">Página 1 de 2</span>
+<button class="px-2 py-1 rounded bg-surface border border-outline-variant hover:bg-surface-container text-on-surface">Siguiente</button>
+</div>
+</div>
+</div>
+</main>
+<!-- ========================================================================= -->
+<!-- 4. MODAL OVERLAY: "Invitar Nuevo Usuario"                                  -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#090d16]/80 backdrop-blur-md">
+<div class="relative w-full max-w-2xl bg-surface border border-outline-variant/80 rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)] overflow-hidden flex flex-col max-h-[942px]">
+<!-- Top Subtle Gradient Glow Line -->
+<div class="h-1 w-full bg-gradient-to-r from-secondary via-primary to-primary-container"></div>
+<!-- Modal Header -->
+<div class="flex items-start justify-between p-space-xl pb-space-md border-b border-outline-variant/60">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="person_add">person_add</span>
+<span class="font-label-xs text-label-xs uppercase font-semibold text-primary">Provisionamiento</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Invitar Nuevo Usuario</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Otorga acceso a miembros del equipo de Jaque o crea accesos restringidos para clientes.
+          </p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1.5 rounded-lg hover:bg-surface-container transition-colors" title="Cerrar modal">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body (Form Fields) -->
+<div class="p-space-xl space-y-space-lg overflow-y-auto flex-1">
+<!-- Campo 1: Correo electrónico -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md font-medium text-on-surface mb-1.5">
+      Correo electrónico <span class="text-primary">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">mail</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono text-xs" placeholder="ejemplo@colegioexcelsior.edu.mx" type="email" value="ejemplo@colegioexcelsior.edu.mx"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-medium text-on-surface mb-1.5">
+      Teléfono o WhatsApp <span class="text-primary">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">chat</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono text-xs" placeholder="+52 81 1234 5678" type="tel" value="+52 81 2345 6789"/>
+</div>
+</div>
+</div>
+<!-- Campo 2: Selector de Rol (Interactive Radio Cards) -->
+<div>
+<label class="block font-label-md text-label-md font-medium text-on-surface mb-2">
+            Seleccionar Rol y Nivel de Privilegios <span class="text-primary">*</span>
+</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+<!-- Opción 1: Agencia - Editor (Seleccionado por defecto) -->
+<label class="relative flex flex-col justify-between p-3 rounded-xl border-2 border-primary bg-primary/5 shadow-[0_0_12px_-2px_rgba(16,185,129,0.15)] transition-all cursor-pointer">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-lg">edit_note</span>
+<span class="font-headline-md text-xs font-semibold text-on-surface">Agencia - Editor</span>
+</div>
+<input checked="" class="text-primary focus:ring-0 bg-surface-container border-outline-variant" name="user_role" type="radio"/>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+        Puede crear briefs, subir creativos, solicitar cambios y responder comentarios en todas las sub-cuentas.
+      </p>
+</div>
+<div class="mt-2 pt-2 border-t border-outline-variant/40 flex items-center gap-1 text-[10px] text-primary font-medium">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Control de briefs y creativos</span>
+</div>
+</label>
+<!-- Opción 2: Agencia - Consulta -->
+<label class="relative flex flex-col justify-between p-3 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-outline transition-all cursor-pointer">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-lg">visibility</span>
+<span class="font-headline-md text-xs font-semibold text-on-surface">Agencia - Consulta</span>
+</div>
+<input class="text-primary focus:ring-0 bg-surface-container border-outline-variant" name="user_role" type="radio"/>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+        Solo lectura de métricas, reportes y estados de campañas. No puede editar briefs ni solicitar nuevas campañas.
+      </p>
+</div>
+<div class="mt-2 pt-2 border-t border-outline-variant/40 flex items-center gap-1 text-[10px] text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-xs text-outline">lock</span>
+<span>Solo lectura analítica</span>
+</div>
+</label>
+<!-- Opción 3: Media buyer -->
+<label class="relative flex flex-col justify-between p-3 rounded-xl border border-outline-variant bg-surface-container-lowest hover:border-outline transition-all cursor-pointer">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-lg">campaign</span>
+<span class="font-headline-md text-xs font-semibold text-on-surface">Media buyer</span>
+</div>
+<input class="text-primary focus:ring-0 bg-surface-container border-outline-variant" name="user_role" type="radio"/>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+        Acceso técnico para recibir briefs, cambiar estados en la bandeja operativa, publicar campañas y enlazar IDs de Meta Ads.
+      </p>
+</div>
+<div class="mt-2 pt-2 border-t border-outline-variant/40 flex items-center gap-1 text-[10px] text-secondary font-medium">
+<span class="material-symbols-outlined text-xs">tune</span>
+<span>Publicación y vinculación técnica</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Campo 3: Condicional para Cliente Final (Asignar Sub-cuentas) -->
+<div class="pt-2 border-t border-outline-variant/60">
+<div class="flex items-center justify-between mb-1">
+<h4 class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="account_tree">account_tree</span>
+              Asignar Sub-cuentas
+            </h4>
+<span class="text-[11px] text-primary font-medium">1 seleccionada</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant mb-3">
+            El cliente solo podrá ver las campañas y métricas de los negocios seleccionados.
+          </p>
+<!-- Checkboxes Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<!-- Sub-cuenta 1 (Selected) -->
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container border border-primary/50 cursor-pointer transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="school">school</span>
+<div>
+<div class="font-label-md text-xs font-semibold text-on-surface">Colegio Excélsior</div>
+<div class="text-[10px] font-mono text-on-surface-variant">act_90412850</div>
+</div>
+</div>
+<input checked="" class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-0" type="checkbox"/>
+</label>
+<!-- Sub-cuenta 2 -->
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 hover:border-outline cursor-pointer transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="local_hospital">local_hospital</span>
+<div>
+<div class="font-label-md text-xs font-medium text-on-surface">Clínica San José</div>
+<div class="text-[10px] font-mono text-outline">act_78104219</div>
+</div>
+</div>
+<input class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-0" type="checkbox"/>
+</label>
+<!-- Sub-cuenta 3 -->
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 hover:border-outline cursor-pointer transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="domain">domain</span>
+<div>
+<div class="font-label-md text-xs font-medium text-on-surface">Inmobiliaria Regia</div>
+<div class="text-[10px] font-mono text-outline">act_39105422</div>
+</div>
+</div>
+<input class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-0" type="checkbox"/>
+</label>
+<!-- Sub-cuenta 4 -->
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 hover:border-outline cursor-pointer transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="restaurant">restaurant</span>
+<div>
+<div class="font-label-md text-xs font-medium text-on-surface">Restaurante Sonora Prime</div>
+<div class="text-[10px] font-mono text-outline">act_98241088</div>
+</div>
+</div>
+<input class="rounded border-outline-variant bg-surface-container-lowest text-primary focus:ring-0" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Campo 4: Vista previa de invitación -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest border border-dashed border-outline-variant">
+<div class="flex items-center gap-2 mb-1.5 text-secondary font-label-md text-xs font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span>Vista previa del mensaje de invitación</span>
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant italic leading-relaxed pl-3 border-l-2 border-secondary/40">"Hola, Jaque Marketing te ha invitado a colaborar como Agencia - Editor en el espacio de trabajo de Meta Ads."</p>
+</div>
+</div>
+<!-- Modal Footer (Actions) -->
+<div class="p-space-xl pt-space-md border-t border-outline-variant/60 bg-surface-container-low flex items-center justify-between gap-space-md">
+<!-- Secondary Action: Copiar enlace -->
+<button class="px-3.5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-base text-outline" data-icon="link">link</span>
+<span>Copiar enlace de invitación</span>
+</button>
+<!-- Primary Action: Enviar Invitación -->
+<div class="flex items-center gap-3">
+<button class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">
+            Cancelar
+          </button>
+<button class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md font-semibold flex items-center gap-2 shadow-[0_0_16px_-2px_rgba(16,185,129,0.35)] transition-all duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-base font-bold">chat</span>
+<span>Enviar invitación por WhatsApp</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

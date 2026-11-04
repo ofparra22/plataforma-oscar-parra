@@ -1,0 +1,415 @@
+<!DOCTYPE html><html class="dark" lang="es-MX"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Configuración General · Jaque Marketing</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#93000a",
+            "tertiary-container": "#e29100",
+            "tertiary-fixed-dim": "#ffb95f",
+            "secondary": "#7bd0ff",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container-high": "#262a34",
+            "primary": "#4edea3",
+            "tertiary": "#ffb95f",
+            "on-secondary": "#00354a",
+            "surface-container-lowest": "#0a0e17",
+            "surface": "#0f131c",
+            "background": "#0f131c",
+            "inverse-primary": "#006c49",
+            "on-secondary-fixed-variant": "#004c69",
+            "on-primary-fixed-variant": "#005236",
+            "surface-container-highest": "#31353f",
+            "surface-container": "#1c1f29",
+            "surface-variant": "#31353f",
+            "outline": "#86948a",
+            "surface-bright": "#353943",
+            "error": "#ffb4ab",
+            "secondary-fixed-dim": "#7bd0ff",
+            "surface-dim": "#0f131c",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "on-background": "#dfe2ef",
+            "primary-container": "#10b981",
+            "secondary-container": "#00a6e0",
+            "on-surface": "#dfe2ef",
+            "on-surface-variant": "#bbcabf",
+            "surface-container-low": "#181b25",
+            "on-secondary-container": "#00374d",
+            "on-tertiary-container": "#523200",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-on-surface": "#2c303a",
+            "surface-tint": "#4edea3",
+            "primary-fixed-dim": "#4edea3",
+            "outline-variant": "#3c4a42",
+            "on-primary": "#003824",
+            "on-tertiary": "#472a00",
+            "on-secondary-fixed": "#001e2c",
+            "on-primary-container": "#00422b",
+            "secondary-fixed": "#c4e7ff",
+            "primary-fixed": "#6ffbbe",
+            "on-tertiary-fixed": "#2a1700",
+            "on-primary-fixed": "#002113",
+            "inverse-surface": "#dfe2ef"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-md": "0.75rem",
+            "margin-md": "1.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1rem",
+            "margin-lg": "2rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-md": ["Inter"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "metric-display": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-xs": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0e17;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #31353f;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4edea3;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container font-body-md text-body-md antialiased flex">
+<!-- ========================================== -->
+<!-- SIDE NAVIGATION (SideNavBar Anchor)       -->
+<!-- ========================================== -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 flex flex-col p-space-md bg-surface border-r border-outline-variant justify-between">
+<!-- Top Brand & Cluster -->
+<div class="flex flex-col gap-space-lg">
+<!-- Logo Branding Header -->
+<div class="flex items-center gap-space-md px-space-sm pt-space-xs pb-space-sm">
+<!-- Isotipo Minimalista Ajedrecístico SVG -->
+<div class="w-10 h-10 rounded-xl bg-surface-container-high border border-outline-variant flex items-center justify-center shrink-0 shadow-inner">
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
+<path d="M8 8h8l-1 5h-6z"></path>
+<path d="M7 13h10v2a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-2z"></path>
+<path d="M5 21h14"></path>
+</svg>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight truncate">Jaque Marketing</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-xs text-label-xs text-primary font-medium truncate">Oscar Parra · Consultor</span>
+</div>
+</div>
+</div>
+<!-- Quick Action / Data Sync -->
+<div class="px-space-xs">
+<button class="w-full flex items-center justify-center gap-space-xs py-2 px-space-sm bg-surface-container-low hover:bg-surface-container border border-outline-variant text-on-surface-variant hover:text-on-surface rounded-lg font-label-md text-label-md transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="sync">sync</span>
+<span class="">Sincronizar Datos</span>
+</button>
+</div>
+<!-- Primary Nav Tabs -->
+<nav aria-label="Navegación principal" class="flex flex-col gap-1 px-space-xs">
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md font-medium">Inicio</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="travel_explore">travel_explore</span>
+<span class="font-label-md text-label-md font-medium">Explorar</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md font-medium">Reportes</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="assignment">assignment</span>
+<span class="font-label-md text-label-md font-medium">Solicitudes</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Nav Tabs & User Profile Anchor -->
+<div class="flex flex-col gap-space-sm pt-space-md border-t border-outline-variant">
+<!-- Footer items: 'Ajustes' is actively mapped according to page intent -->
+<div class="flex flex-col gap-1 px-space-xs">
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-medium border-l-2 border-primary active:scale-[0.98] transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md font-medium">Ajustes</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="headset_mic">headset_mic</span>
+<span class="font-label-md text-label-md font-medium">Soporte Técnico</span>
+</a>
+</div>
+<!-- User Session Snippet -->
+<div class="mt-2 p-space-sm rounded-lg bg-surface-container-lowest border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<img class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40 shrink-0" data-alt="Professional headshot portrait of Carlos Mendoza, a senior marketing director in his late thirties wearing an obsidian technical blazer in a dark sleek creative agency environment, cinematic soft lighting with emerald ambient reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4DA5TlIapo1tCdge3CG2DtO4NsvM1RS3I5qGx61sy-L3_7EWBzOWlNMyRddSPWadW_eB3RfefN2Yfiqb-v6Xjwe3o5-dXMryjHohsOcQMvYUSIhwzF5XdyB3Ij7tn2MwN-qODCOCoRhwmK-ya21BEr1JVVQGDBBCfIpTF3lylOhqbS7HRjartBIGpSj097mbBWLpzdPxG07GAs0_5vJuHEn2zv6pDWPin1MJcAsw">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Jacky (Jaque Marketing)</span>
+<span class="font-label-xs text-label-xs text-primary font-medium truncate">Oscar Parra · Consultor</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</aside>
+<!-- ========================================== -->
+<!-- TOP BAR (TopNavBar Anchor)                 -->
+<!-- ========================================== -->
+<header class="fixed top-0 right-0 left-64 h-16 z-30 flex items-center justify-between px-space-xl backdrop-blur-md bg-surface/90 border-b border-outline-variant">
+<!-- Client context & breadcrumbs -->
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary shrink-0"></span>
+<span class="font-label-md text-label-md font-medium text-on-surface">Jaque Marketing (Torreón, Coahuila)</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="unfold_more">unfold_more</span>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="hover:text-on-surface transition-colors cursor-pointer">Ajustes</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-medium">Configuración General</span>
+</div>
+</div>
+<!-- Right Controls: Status & Actions -->
+<div class="flex items-center gap-space-md">
+<!-- Badge Meta Ads Sync -->
+
+<!-- Icon Actions -->
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150" title="Notificaciones">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150" title="Sincronizar">
+<span class="material-symbols-outlined text-[20px]" data-icon="sync">sync</span>
+</button>
+<!-- Primary CTA in TopNavBar -->
+<button class="flex items-center gap-space-xs px-3.5 py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary border border-outline-variant hover:border-primary/40 font-label-md text-label-md transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span class="">Solicitar Nueva Campaña</span>
+</button>
+<!-- User Avatar Profile Thumbnail -->
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-1 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of account executive Carlos Mendoza against dark slate backdrop with studio key lights and soft green ambient accentuation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE9z_tfiIon2FJgXMobDXziaxlKxhJ_rbTGSrDT0p-Uw9gjMIsPkaJLRbzuyz1hFUPTWhms6E0QKNXXgMvIdaWNu3tdlw68FM0QcdeDREsNpqkO_omIL-VEHNCwFLkBvW4jPokvEaIPV4l2y-uQPJLqsjBAm0kQkMplh6HAeDCZkdJxpxDOq1V0L1gc4HTQ_OM2jQ8cKBq0JEyOjGiNSrrPZhYF5lbw_h_vH_y4To">
+</div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- MAIN WORKSPACE CONTENT                     -->
+<!-- ========================================== -->
+<main class="ml-64 mt-16 flex-1 min-h-[calc(100vh-4rem)] p-space-xl bg-surface-container-lowest overflow-y-auto">
+<!-- Title & Top Summary Bar -->
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-xl pb-space-lg border-b border-outline-variant">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold tracking-wider uppercase bg-surface-container-high text-primary border border-primary/20">Configuración del Sistema</span>
+<span class="text-on-surface-variant font-label-xs text-label-xs">ID de Cuenta: JQ-ADM-8821</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Configuración General</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+          Administra tu información personal, métodos de pago corporativos y preferencias de notificación para la suite operativa de alto rendimiento.
+        </p>
+</div>
+<!-- Quick Action Right -->
+<div class="flex items-center gap-space-md shrink-0">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-label-md transition-colors active:scale-[0.98]" type="button">
+          Descartar
+        </button>
+<button class="flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-fixed font-headline-md text-headline-md font-semibold transition-all shadow-[0_0_20px_-3px_rgba(78,222,163,0.3)] active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="save">save</span>
+<span class="">Guardar cambios</span>
+</button>
+</div>
+</div>
+<!-- Layout: 2 Columns Settings Pattern -->
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- ========================================== -->
+<!-- COLUMNA IZQUIERDA: Sub-menú de Ajustes     -->
+<!-- ========================================== -->
+<div class="lg:col-span-3 flex flex-col gap-space-lg sticky top-24">
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-space-md overflow-hidden shadow-sm">
+<div class="px-3 py-2 text-xs font-semibold text-on-surface-variant tracking-wider uppercase font-label-xs">
+            Navegación de Ajustes
+          </div>
+<nav class="flex flex-col gap-1 mt-1"><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg bg-surface-container-high text-primary font-medium border-l-2 border-primary transition-colors" href="#perfil"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span><span class="font-body-md text-body-md font-semibold text-on-surface">Mi Perfil</span></div><span class="w-1.5 h-1.5 rounded-full bg-primary"></span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#usuarios"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]" data-icon="group">group</span><span class="font-body-md text-body-md">Usuarios de la agencia</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#preferencias"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span><span class="font-body-md text-body-md">Preferencias</span></div></a></nav>
+</div>
+<!-- Tarjeta Resumen: Plan Agencia Pro -->
+</div>
+<!-- ========================================== -->
+<!-- COLUMNA DERECHA: Contenido de Formularios  -->
+<!-- ========================================== -->
+<div class="lg:col-span-9 flex flex-col gap-space-xl">
+<!-- ======================================== -->
+<!-- SECCIÓN 1: MI PERFIL                     -->
+<!-- ======================================== -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant p-space-xl backdrop-blur-sm" id="perfil">
+<!-- Header de Sección -->
+<div class="flex items-start justify-between pb-space-lg border-b border-outline-variant">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="person">person</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Información Personal</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                Datos de identificación corporativa para atribución de cambios y auditorías operativas.
+              </p>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-high border border-outline-variant text-on-surface-variant font-label-xs text-label-xs">
+              Rol: Superadministrador
+            </span>
+</div>
+<!-- Avatar & File Actions -->
+<div class="py-space-lg flex flex-col sm:flex-row items-center gap-space-xl border-b border-outline-variant">
+<div class="relative shrink-0">
+<img class="w-24 h-24 rounded-2xl object-cover ring-2 ring-primary/50 shadow-md" data-alt="High resolution executive headshot portrait of Carlos Mendoza wearing formal obsidian slate apparel with sharp cinematic studio rim lighting in a digital agency command center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUhIjwrNVRsjcizo8kqjheCkVJoa5mJT46t1DJJN1gIxcsj8pv0y4ml4mlQA6FtEkB9w8vWPirhW7RqPb5fd4TmvfEAhWPdzGHtVLgKcpfcE9Ww4jVVKpccStd98xLampLLUL7npe4YTCbdcBy6MmCvxNUkyzWBcV2I5YLWDp0Q9xhom_F6sVa1eoBp1vi0qUoK9etBrG49KFAi4Oa65buZXZZ6PuAAfhqW4mAZ7w">
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary rounded-full p-1 shadow-sm" title="Usuario Verificado">
+<span class="material-symbols-outlined text-[16px] block" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 text-center sm:text-left">
+<div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">Foto de Perfil</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Archivos JPG, PNG o WebP de hasta 4MB. Resolución recomendada 400x400 px.</p>
+</div>
+<div class="flex items-center gap-3 mt-1 justify-center sm:justify-start">
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-label-md transition-colors active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="photo_camera">photo_camera</span>
+<span class="">Cambiar foto</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg text-error hover:bg-error-container/20 border border-error/30 font-label-md text-label-md transition-colors active:scale-[0.98]" type="button">
+                  Eliminar
+                </button>
+</div>
+</div>
+</div>
+<!-- Form Fields (2-col grid) -->
+<form class="grid grid-cols-1 md:grid-cols-2 gap-space-lg pt-space-lg"><div class="flex flex-col gap-1.5"><label class="font-label-md text-label-md text-on-surface font-medium" for="full_name">Nombre completo</label><div class="relative"><input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-on-surface rounded-lg px-3.5 py-2.5 font-body-md text-body-md transition-all" id="full_name" type="text" value="Jacky (Jaque Marketing)"><span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[18px]" data-icon="badge">badge</span></div></div><div class="flex flex-col gap-1.5"><div class="flex items-center justify-between"><label class="font-label-md text-label-md text-on-surface font-medium" for="email">Correo electrónico corporativo</label><span class="inline-flex items-center gap-1 text-[11px] text-primary font-medium"><span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Verificado</span></div><div class="relative"><input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-on-surface rounded-lg px-3.5 py-2.5 font-body-md text-body-md transition-all" id="email" type="email" value="jacky@jaquemarketing.com"><span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[18px]" data-icon="mail">mail</span></div></div><div class="flex flex-col gap-1.5"><label class="font-label-md text-label-md text-on-surface font-medium" for="phone">Teléfono / WhatsApp de contacto</label><div class="relative"><input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-on-surface rounded-lg px-3.5 py-2.5 font-body-md text-body-md transition-all" id="phone" type="tel" value="+52 (871) 745-9200"><span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[18px]" data-icon="chat">chat</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Contacto directo para coordinación con Oscar Parra y clientes.</span></div><div class="flex flex-col gap-1.5"><label class="font-label-md text-label-md text-on-surface font-medium" for="role">Rol en Jaque Marketing</label><div class="relative"><input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-on-surface rounded-lg px-3.5 py-2.5 font-body-md text-body-md transition-all" id="role" type="text" value="Senior Account Manager"><span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[18px]" data-icon="work">work</span></div></div></form>
+<!-- Security Sub-action Panel -->
+<div class="mt-space-lg p-space-md rounded-lg bg-surface-container-lowest border border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock_reset">lock_reset</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Contraseña de Acceso</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Última actualización de seguridad: hace 2 meses (Autenticación 2FA Activa).</p>
+</div>
+</div>
+<button class="shrink-0 flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant text-on-surface font-label-md text-label-md transition-colors active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="key">key</span>
+<span class="">Cambiar contraseña</span>
+</button>
+</div>
+</section>
+<!-- ======================================== -->
+<!-- SECCIÓN 2: FACTURACIÓN Y PAGOS           -->
+<!-- ======================================== -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant p-space-xl backdrop-blur-sm" id="usuarios"><div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-lg border-b border-outline-variant gap-space-md"><div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[22px]" data-icon="group">group</span><h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Usuarios de la agencia</h2></div><p class="font-body-md text-body-md text-on-surface-variant mt-1">Equipo colaborador y gestores con acceso a las cuentas publicitarias de Jaque Marketing.</p></div><button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-primary hover:bg-primary-fixed text-on-primary font-label-md text-label-md font-semibold transition-all active:scale-[0.98] shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]" data-icon="person_add">person_add</span><span class="">Invitar usuario</span></button></div><div class="pt-space-lg"><div class="overflow-x-auto rounded-lg border border-outline-variant"><table class="w-full text-left border-collapse"><thead><tr class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md border-b border-outline-variant"><th class="py-3 px-4 font-semibold">Colaborador</th><th class="py-3 px-4 font-semibold">Rol</th><th class="py-3 px-4 font-semibold text-center">Estado</th><th class="py-3 px-4 font-semibold text-right">Acciones</th></tr></thead><tbody class="divide-y divide-outline-variant font-body-sm text-body-sm bg-surface-container-lowest"><tr class="hover:bg-surface-container/60 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary border border-primary/30 flex items-center justify-center font-bold text-xs shrink-0">OP</div><div><span class="font-body-md text-body-md font-semibold text-on-surface block">Oscar Parra</span><span class="font-label-xs text-label-xs text-on-surface-variant">oscar@parra.marketing</span></div></div></td><td class="py-3 px-4 text-on-surface"><span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-high border border-outline-variant text-on-surface">Consultor de Marketing &amp; Media Buyer</span></td><td class="py-3 px-4 text-center"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-primary/10 text-primary border border-primary/20"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Activo</span></td><td class="py-3 px-4 text-right"><button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="Gestionar permisos"><span class="material-symbols-outlined text-[18px]" data-icon="settings">settings</span></button></td></tr><tr class="hover:bg-surface-container/60 transition-colors"><td class="py-3 px-4"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface border border-outline-variant flex items-center justify-center font-bold text-xs shrink-0">JJ</div><div><span class="font-body-md text-body-md font-semibold text-on-surface block">Jacky (Jaque Marketing)</span><span class="font-label-xs text-label-xs text-on-surface-variant">jacky@jaquemarketing.com</span></div></div></td><td class="py-3 px-4 text-on-surface"><span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container-high border border-outline-variant text-on-surface">Editor de Cuentas &amp; Copywriting</span></td><td class="py-3 px-4 text-center"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-primary/10 text-primary border border-primary/20"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Activo</span></td><td class="py-3 px-4 text-right"><button class="p-1 text-on-surface-variant hover:text-on-surface rounded" title="Gestionar permisos"><span class="material-symbols-outlined text-[18px]" data-icon="settings">settings</span></button></td></tr></tbody></table></div></div></section>
+<!-- ======================================== -->
+<!-- SECCIÓN 3: PREFERENCIAS DE NOTIFICACIÓN  -->
+<!-- ======================================== -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant p-space-xl backdrop-blur-sm" id="preferencias"><div class="flex items-start justify-between pb-space-lg border-b border-outline-variant"><div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[22px]" data-icon="tune">tune</span><h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Preferencias</h2></div><p class="font-body-md text-body-md text-on-surface-variant mt-1">Personaliza la apariencia del sistema y los canales directos de notificación y contacto.</p></div></div><div class="pt-space-lg flex flex-col gap-space-lg"><div class="p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant"><h3 class="font-label-md text-label-md text-on-surface font-semibold uppercase tracking-wider mb-2">Tema Visual de la Plataforma</h3><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Elige entre la vista oscura Obsidian optimizada para monitores de alto contraste o el modo claro.</p><div class="grid grid-cols-1 md:grid-cols-2 gap-space-md"><label class="flex items-center justify-between p-space-md rounded-lg border-2 border-primary bg-surface-container-high cursor-pointer"><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]" data-icon="dark_mode">dark_mode</span></div><div><span class="font-body-md text-body-md font-semibold text-on-surface block">Modo Oscuro (Obsidian)</span><span class="font-body-sm text-body-sm text-primary font-medium">Paleta Esmeralda · Predeterminado</span></div></div><input checked="" class="text-primary focus:ring-primary" name="theme" type="radio"></label><label class="flex items-center justify-between p-space-md rounded-lg border border-outline-variant bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors"><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined text-[20px]" data-icon="light_mode">light_mode</span></div><div><span class="font-body-md text-body-md font-semibold text-on-surface block">Modo Claro</span><span class="font-body-sm text-body-sm text-on-surface-variant">Alto brillo para entornos luminosos</span></div></div><input class="text-primary focus:ring-primary" name="theme" type="radio"></label></div></div><div class="divide-y divide-outline-variant"><div class="py-space-md flex items-start justify-between gap-space-lg"><div class="flex gap-space-md"><div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5"><span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span></div><div><h4 class="font-headline-md text-headline-md font-semibold text-on-surface">Avisos por WhatsApp al Media Buyer (Oscar Parra)</h4><p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Recibir notificaciones inmediatas vía WhatsApp ante cambios críticos de presupuesto o pausas de campañas.</p></div></div><label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1"><input checked="" class="sr-only peer" type="checkbox"><div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-container after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div></label></div></div></div></section>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- STICKY BOTTOM SAVE ACTION BAR              -->
+<!-- ========================================== -->
+<div class="max-w-7xl mx-auto mt-space-xl pt-space-lg">
+<div class="rounded-xl p-space-md bg-surface-container-high border border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-space-md shadow-2xl backdrop-blur-md">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_#4edea3]"></span>
+<span class="font-body-md text-body-md font-medium">Todos los cambios han sido guardados localmente. Haz clic para sincronizar con Meta Business.</span>
+</div>
+<div class="flex items-center gap-space-md w-full sm:w-auto justify-end">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant font-label-md text-label-md transition-all active:scale-[0.98]" type="button">
+            Descartar cambios
+          </button>
+<button class="flex items-center gap-2 px-space-xl py-2 rounded-lg bg-primary hover:bg-primary-fixed text-on-primary font-headline-md text-headline-md font-bold transition-all shadow-[0_0_16px_-2px_rgba(16,185,129,0.3)] active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="cloud_done">cloud_done</span>
+<span class="">Guardar cambios</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<script>
+    // Lightweight atmospheric feedback on action buttons
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        if (this.innerText.includes('Guardar')) {
+          const originalText = this.innerHTML;
+          this.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin" data-icon="sync">sync</span><span>Sincronizando...</span>';
+          setTimeout(() => {
+            this.innerHTML = '<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span><span>¡Guardado con éxito!</span>';
+            setTimeout(() => {
+              this.innerHTML = originalText;
+            }, 1800);
+          }, 800);
+        }
+      });
+    });
+  </script>
+
+
+</body></html>

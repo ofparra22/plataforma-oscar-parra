@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jaque Marketing - Dashboard Operativo (Cargando...)</title>
+<!-- Material Symbols Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter & Plus Jakarta Sans Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim as provided -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#ffdad6",
+            "primary": "#4edea3",
+            "secondary-container": "#00a6e0",
+            "on-tertiary-fixed-variant": "#653e00",
+            "inverse-primary": "#006c49",
+            "on-tertiary": "#472a00",
+            "surface-container-high": "#262a34",
+            "tertiary": "#ffb95f",
+            "outline": "#86948a",
+            "surface": "#0f131c",
+            "surface-container-low": "#181b25",
+            "surface-container-highest": "#31353f",
+            "background": "#0f131c",
+            "inverse-surface": "#dfe2ef",
+            "on-surface-variant": "#bbcabf",
+            "on-tertiary-container": "#523200",
+            "surface-container-lowest": "#0a0e17",
+            "primary-fixed-dim": "#4edea3",
+            "error": "#ffb4ab",
+            "on-background": "#dfe2ef",
+            "on-secondary-fixed-variant": "#004c69",
+            "on-surface": "#dfe2ef",
+            "secondary": "#7bd0ff",
+            "surface-dim": "#0f131c",
+            "on-primary-container": "#00422b",
+            "primary-container": "#10b981",
+            "surface-variant": "#31353f",
+            "on-primary-fixed-variant": "#005236",
+            "primary-fixed": "#6ffbbe",
+            "secondary-fixed-dim": "#7bd0ff",
+            "inverse-on-surface": "#2c303a",
+            "surface-container": "#1c1f29",
+            "on-error": "#690005",
+            "tertiary-fixed": "#ffddb8",
+            "on-secondary-fixed": "#001e2c",
+            "on-secondary": "#00354a",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary-container": "#00374d",
+            "secondary-fixed": "#c4e7ff",
+            "outline-variant": "#3c4a42",
+            "error-container": "#93000a",
+            "surface-bright": "#353943",
+            "on-primary": "#003824",
+            "tertiary-container": "#e29100",
+            "surface-tint": "#4edea3",
+            "on-primary-fixed": "#002113",
+            "tertiary-fixed-dim": "#ffb95f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-md": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin-lg": "2rem",
+            "gutter-lg": "1.5rem",
+            "space-xl": "1.5rem",
+            "space-lg": "1rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1rem",
+            "space-md": "0.75rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "metric-display": ["Inter"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-xs": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "metric-display": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+    /* Shimmer animation effect */
+    @keyframes shimmer {
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    .skeleton-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .skeleton-shimmer::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.04) 20%,
+        rgba(255, 255, 255, 0.09) 60%,
+        rgba(255, 255, 255, 0)
+      );
+      animation: shimmer 1.8s infinite;
+      content: '';
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased font-body-md text-body-md min-h-screen selection:bg-primary selection:text-on-primary-container">
+<!-- ========================================================================= -->
+<!-- 1. SIDE NAVIGATION BAR (SHARED COMPONENT: SideNavBar - PRESERVED)          -->
+<!-- ========================================================================= -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 flex flex-col justify-between p-space-md bg-surface border-r border-outline-variant transition-colors duration-150">
+<!-- Top Branding & Status -->
+<div class="flex flex-col gap-space-md">
+<!-- Logo Container -->
+<div class="flex flex-col px-space-xs pt-space-xs pb-space-sm border-b border-outline-variant">
+<div class="h-10 w-full flex items-center justify-between">
+<img alt="Logo Jaque Marketing" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WdTOTB-rAqifvInATxl8wPp21B8qX3uUT6x_Csd5b7ii34JZFiJD9NNSkD5pPMgGpfEvFXOxgd7WMEsM58FKwoHuiPPcv7FafKwzS_OUDOMVIxMBYeXoI9csIn9sTeWZxtDuRnEYg3GWyeFeERuJetkOmrBHJ46beu37oFKxgaaL16n51ZDdYdNRkN7bd2z1684NdMKEP57dR1Jyf1cR1Bv1Fz8HZ15N-85KVHL9_H"/>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-label-xs text-secondary bg-secondary/10 border border-secondary/20">
+            PRO
+          </span>
+</div>
+<div class="flex items-center gap-space-xs mt-space-xs">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-medium">Meta Ads Sync Activo · En línea</span>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav aria-label="Navegación principal" class="flex flex-col gap-1.5 mt-space-xs">
+<!-- 1: Inicio -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-medium border-l-2 border-primary transition-transform duration-100 active:scale-[0.98]" href="#inicio">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Inicio</span>
+</a>
+<!-- 2: Explorar -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#explorar">
+<span class="material-symbols-outlined text-[20px]" data-icon="travel_explore">travel_explore</span>
+<span class="font-label-md text-label-md">Explorar</span>
+</a>
+<!-- 3: Reportes -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#reportes">
+<span class="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Reportes</span>
+</a>
+<!-- 4: Solicitudes -->
+<a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-150 active:scale-[0.98]" href="#solicitudes">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="assignment">assignment</span>
+<span class="font-label-md text-label-md">Solicitudes</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-tertiary/20 text-tertiary border border-tertiary/30">2</span>
+</a>
+</nav>
+<!-- Sync CTA Button -->
+<div class="mt-space-sm">
+<button class="w-full flex items-center justify-center gap-space-xs px-space-md py-space-sm bg-surface-container-high hover:bg-surface-variant border border-outline-variant rounded-lg text-on-surface font-label-md text-label-md transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary animate-spin" data-icon="sync">sync</span>
+<span>Sincronizando...</span>
+</button>
+</div>
+</div>
+<!-- Bottom Controls & Account Manager Profile -->
+<div class="flex flex-col gap-space-sm border-t border-outline-variant pt-space-md">
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container text-body-sm font-body-sm transition-colors duration-150" href="#ajustes">
+<span class="material-symbols-outlined text-[18px]" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Ajustes</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container text-body-sm font-body-sm transition-colors duration-150" href="#soporte">
+<span class="material-symbols-outlined text-[18px]" data-icon="headset_mic">headset_mic</span>
+<span class="font-label-md text-label-md">Soporte Técnico</span>
+</a>
+</div>
+<!-- Account Manager User Profile Card -->
+<div class="mt-space-xs p-2 rounded-lg bg-surface-container-low border border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold text-xs tracking-tight">
+            CM
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate leading-tight">Carlos Mendoza</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant truncate">Senior AM</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- 2. TOP NAVIGATION BAR (WITH LOADING BADGE & SKELETON CONTROLS)            -->
+<!-- ========================================================================= -->
+<header class="fixed top-0 right-0 left-64 h-16 z-30 flex items-center justify-between px-space-xl bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<!-- Client Quick Switcher (Skeleton State) -->
+<div class="flex items-center gap-space-md">
+<!-- Client Selector Dropdown Skeleton -->
+<div class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg bg-surface-container-high border border-outline-variant">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant animate-pulse"></span>
+<div class="h-4 w-32 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+<div class="h-4 w-24 bg-surface-container-highest skeleton-shimmer rounded border border-outline-variant/40 animate-pulse"></div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant/40" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Quick Switch Client Chips Skeleton -->
+<div class="hidden xl:flex items-center gap-2 pl-2 border-l border-outline-variant/60">
+<div class="h-3 w-12 bg-surface-variant rounded animate-pulse"></div>
+<div class="h-6 w-24 bg-surface-container skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-6 w-28 bg-surface-container skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</div>
+<!-- Right Controls: Status Toast Badge + Skeletons -->
+<div class="flex items-center gap-space-md">
+<!-- Discrete Live Loading Toast / Badge -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/25 shadow-sm">
+<svg class="animate-spin h-3.5 w-3.5 text-primary" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor"></path>
+</svg>
+<span class="text-[12px] font-label-md font-medium text-primary">Cargando métricas de Meta Ads...</span>
+</div>
+<!-- Date Range Selector Skeleton -->
+<div class="flex items-center gap-2 px-space-md py-1.5 rounded-lg bg-surface-container-lowest border border-outline-variant">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant/50" data-icon="calendar_today">calendar_today</span>
+<div class="h-4 w-36 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant/40" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+<!-- Icon Actions -->
+<div class="flex items-center gap-1">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/50">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant/40" data-icon="notifications">notifications</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/50">
+<span class="material-symbols-outlined text-[18px] text-primary animate-spin" data-icon="sync">sync</span>
+</div>
+</div>
+<!-- Primary Action CTA Skeleton -->
+<div class="h-9 w-44 rounded-lg bg-surface-variant skeleton-shimmer border border-outline-variant/60 animate-pulse"></div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN OPERATIONAL VIEW CANVAS (SKELETON LOADING STATE)                     -->
+<!-- ========================================================================= -->
+<main class="ml-64 pt-20 pb-24 px-space-xl min-h-screen">
+<!-- Operator Breadcrumb & Live Meta Status Banner Skeleton -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-lg">
+<div>
+<!-- Breadcrumb Skeleton -->
+<div class="flex items-center gap-2 mb-2">
+<div class="h-3 w-28 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant/40" data-icon="chevron_right">chevron_right</span>
+<div class="h-3 w-36 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant/40" data-icon="chevron_right">chevron_right</span>
+<div class="h-3 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+<!-- Title Skeleton -->
+<div class="h-9 w-80 bg-surface-variant skeleton-shimmer rounded-lg animate-pulse"></div>
+</div>
+<!-- Media Buyer Status Skeleton -->
+<div class="flex items-center gap-3 px-space-md py-space-sm rounded-lg bg-surface-container border border-outline-variant">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant skeleton-shimmer animate-pulse"></div>
+<div class="h-4 w-32 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+<span class="h-3 w-[1px] bg-outline-variant"></span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<div class="h-3 w-28 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- ======================================================================= -->
+<!-- 2. PACING BAR SKELETON: Gasto Presupuestario Mensual                    -->
+<!-- ======================================================================= -->
+<section class="mb-space-xl p-space-lg rounded-xl bg-surface border border-outline-variant relative overflow-hidden backdrop-blur-md">
+<!-- Glow ambient overlay -->
+<div class="absolute -right-20 -top-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-md relative z-10">
+<!-- Pacing Header Info Skeleton -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface-variant/40">
+<span class="material-symbols-outlined text-[24px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<div class="h-5 w-64 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-4 w-40 bg-surface-container-high skeleton-shimmer rounded border border-outline-variant/40 animate-pulse"></div>
+</div>
+<div class="h-4 w-96 max-w-full bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</div>
+<!-- Secondary Telemetry Pills Skeleton -->
+<div class="flex items-center gap-space-md self-start md:self-auto">
+<div class="flex flex-col items-end gap-1">
+<div class="h-3 w-28 bg-surface-variant rounded animate-pulse"></div>
+<div class="h-5 w-14 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex flex-col items-end gap-1">
+<div class="h-3 w-28 bg-surface-variant rounded animate-pulse"></div>
+<div class="h-5 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Horizontal Multi-Tier Progress Bar Skeleton -->
+<div class="space-y-2">
+<div class="w-full h-3.5 bg-surface-container-highest rounded-full overflow-hidden p-0.5 flex relative">
+<!-- Placeholder progress bar filling with skeleton pulse -->
+<div class="h-full bg-surface-variant skeleton-shimmer rounded-full animate-pulse relative z-10" style="width: 55%;"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="h-4 w-72 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-4 w-20 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- 3. CUATRO TARJETAS DE KPIS PRINCIPALES (SKELETON BENTO GRID)            -->
+<!-- ======================================================================= -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- KPI 1 Skeleton: Leads de Negocio -->
+<div class="p-space-lg rounded-xl bg-surface border border-outline-variant flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="h-3.5 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-5 w-20 bg-surface-container-high skeleton-shimmer rounded border border-outline-variant/40 animate-pulse"></div>
+</div>
+<div class="h-8 w-32 bg-surface-variant skeleton-shimmer rounded-lg my-1 animate-pulse"></div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/60 flex items-center justify-between">
+<div class="h-3.5 w-20 bg-surface-variant rounded animate-pulse"></div>
+<div class="h-3.5 w-24 bg-surface-variant rounded animate-pulse"></div>
+</div>
+</div>
+<!-- KPI 2 Skeleton: Costo por Lead (CPL) -->
+<div class="p-space-lg rounded-xl bg-surface border border-outline-variant flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="h-3.5 w-28 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-5 w-20 bg-surface-container-high skeleton-shimmer rounded border border-outline-variant/40 animate-pulse"></div>
+</div>
+<div class="h-8 w-36 bg-surface-variant skeleton-shimmer rounded-lg my-1 animate-pulse"></div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/60 flex items-center justify-between">
+<div class="h-3.5 w-24 bg-surface-variant rounded animate-pulse"></div>
+<div class="h-3.5 w-16 bg-surface-variant rounded animate-pulse"></div>
+</div>
+</div>
+<!-- KPI 3 Skeleton: Click-Through Rate (CTR) -->
+<div class="p-space-lg rounded-xl bg-surface border border-outline-variant flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="h-3.5 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-5 w-18 bg-surface-container-high skeleton-shimmer rounded border border-outline-variant/40 animate-pulse"></div>
+</div>
+<div class="h-8 w-24 bg-surface-variant skeleton-shimmer rounded-lg my-1 animate-pulse"></div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/60 flex items-center justify-between">
+<div class="h-3.5 w-20 bg-surface-variant rounded animate-pulse"></div>
+<div class="h-3.5 w-20 bg-surface-variant rounded animate-pulse"></div>
+</div>
+</div>
+<!-- KPI 4 Skeleton: Costo x Mil (CPM) -->
+<div class="p-space-lg rounded-xl bg-surface border border-outline-variant flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="h-3.5 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-5 w-20 bg-surface-container-high skeleton-shimmer rounded border border-outline-variant/40 animate-pulse"></div>
+</div>
+<div class="h-8 w-36 bg-surface-variant skeleton-shimmer rounded-lg my-1 animate-pulse"></div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/60 flex items-center justify-between">
+<div class="h-3.5 w-24 bg-surface-variant rounded animate-pulse"></div>
+<div class="h-3.5 w-20 bg-surface-variant rounded animate-pulse"></div>
+</div>
+</div>
+</section>
+<!-- ======================================================================= -->
+<!-- 4. CAMPAÑAS ACTIVAS (META ADS): FILTROS & TABLA TÉCNICA SKELETON        -->
+<!-- ======================================================================= -->
+<section class="rounded-xl bg-surface border border-outline-variant overflow-hidden">
+<!-- Section Header & Filter Toolbar Skeleton -->
+<div class="p-space-lg border-b border-outline-variant flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container/40">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<div class="h-6 w-56 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-5 w-24 bg-surface-container-high skeleton-shimmer rounded border border-outline-variant/40 animate-pulse"></div>
+</div>
+<div class="h-4 w-80 max-w-full bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+<!-- Interactive Filters Toolbar Skeleton -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Search input skeleton -->
+<div class="h-8 w-56 bg-surface-container-lowest skeleton-shimmer rounded-lg border border-outline-variant animate-pulse"></div>
+<!-- Objective Filter buttons skeleton -->
+<div class="h-8 w-44 bg-surface-container-lowest skeleton-shimmer rounded-lg border border-outline-variant animate-pulse"></div>
+<!-- Only Active Switch skeleton -->
+<div class="h-8 w-28 bg-surface-container-lowest skeleton-shimmer rounded-lg border border-outline-variant animate-pulse"></div>
+</div>
+</div>
+<!-- High-Density Telemetry Table Skeleton -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse text-body-md">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-3 px-space-lg font-semibold" scope="col">Campaña / Identificador Técnico</th>
+<th class="py-3 px-space-md font-semibold" scope="col">Estado &amp; Objetivo</th>
+<th class="py-3 px-space-md font-semibold text-right" scope="col">Presupuesto Diario / Gasto</th>
+<th class="py-3 px-space-md font-semibold text-right" scope="col">Leads Hoy</th>
+<th class="py-3 px-space-md font-semibold text-right" scope="col">Costo / Resultado</th>
+<th class="py-3 px-space-md font-semibold text-center w-36" scope="col">Tendencia (7D)</th>
+<th class="py-3 px-space-lg font-semibold text-right" scope="col">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60">
+<!-- Skeleton Row 1 -->
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex flex-col gap-1.5">
+<div class="h-4 w-44 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-3 w-32 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="inline-block h-3.5 w-6 bg-surface-variant skeleton-shimmer rounded-full animate-pulse"></span>
+<div class="h-5 w-28 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex flex-col items-end gap-1">
+<div class="h-4 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-3 w-16 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-block h-5 w-14 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-block h-4 w-18 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="w-28 h-6 mx-auto bg-surface-variant/70 skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1.5">
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+</div>
+</td>
+</tr>
+<!-- Skeleton Row 2 -->
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex flex-col gap-1.5">
+<div class="h-4 w-52 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-3 w-36 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="inline-block h-3.5 w-6 bg-surface-variant skeleton-shimmer rounded-full animate-pulse"></span>
+<div class="h-5 w-32 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex flex-col items-end gap-1">
+<div class="h-4 w-28 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-3 w-18 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-block h-5 w-12 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-block h-4 w-20 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="w-28 h-6 mx-auto bg-surface-variant/70 skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1.5">
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+</div>
+</td>
+</tr>
+<!-- Skeleton Row 3 -->
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex flex-col gap-1.5">
+<div class="h-4 w-56 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-3 w-40 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="inline-block h-3.5 w-6 bg-surface-variant skeleton-shimmer rounded-full animate-pulse"></span>
+<div class="h-5 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex flex-col items-end gap-1">
+<div class="h-4 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-3 w-16 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-block h-5 w-12 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-block h-4 w-18 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="w-28 h-6 mx-auto bg-surface-variant/70 skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1.5">
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+</div>
+</td>
+</tr>
+<!-- Skeleton Row 4 -->
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex flex-col gap-1.5">
+<div class="h-4 w-48 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-3 w-36 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="inline-block h-3.5 w-6 bg-surface-variant skeleton-shimmer rounded-full animate-pulse"></span>
+<div class="h-5 w-28 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex flex-col items-end gap-1">
+<div class="h-4 w-24 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<div class="h-3 w-16 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-block h-5 w-12 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-block h-4 w-18 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="w-28 h-6 mx-auto bg-surface-variant/70 skeleton-shimmer rounded animate-pulse"></div>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1.5">
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+<div class="w-6 h-6 rounded bg-surface-container-high skeleton-shimmer animate-pulse"></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Telemetry Summary Skeleton -->
+<div class="p-space-md border-t border-outline-variant bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="h-3.5 w-40 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+<span>·</span>
+<div class="h-3.5 w-48 bg-surface-variant skeleton-shimmer rounded animate-pulse"></div>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-6 w-16 bg-surface-container skeleton-shimmer rounded border border-outline-variant animate-pulse"></div>
+<div class="h-4 w-20 bg-surface-variant rounded animate-pulse"></div>
+<div class="h-6 w-16 bg-surface-container skeleton-shimmer rounded border border-outline-variant animate-pulse"></div>
+</div>
+</div>
+</section>
+<!-- Bottom Secondary Telemetry Row Skeleton -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-lg">
+<!-- Telemetry Box 1 Skeleton -->
+<div class="p-space-md rounded-xl bg-surface border border-outline-variant flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded bg-surface-variant skeleton-shimmer animate-pulse mt-0.5"></div>
+<div class="flex-1">
+<div class="h-4 w-44 bg-surface-variant skeleton-shimmer rounded animate-pulse mb-1.5"></div>
+<div class="space-y-1">
+<div class="h-3 w-full bg-surface-container-high rounded animate-pulse"></div>
+<div class="h-3 w-3/4 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Telemetry Box 2 Skeleton -->
+<div class="p-space-md rounded-xl bg-surface border border-outline-variant flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded bg-surface-variant skeleton-shimmer animate-pulse mt-0.5"></div>
+<div class="flex-1">
+<div class="h-4 w-48 bg-surface-variant skeleton-shimmer rounded animate-pulse mb-1.5"></div>
+<div class="space-y-1">
+<div class="h-3 w-full bg-surface-container-high rounded animate-pulse"></div>
+<div class="h-3 w-2/3 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Telemetry Box 3 Skeleton -->
+<div class="p-space-md rounded-xl bg-surface border border-outline-variant flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded bg-surface-variant skeleton-shimmer animate-pulse mt-0.5"></div>
+<div class="flex-1">
+<div class="h-4 w-44 bg-surface-variant skeleton-shimmer rounded animate-pulse mb-1.5"></div>
+<div class="space-y-1">
+<div class="h-3 w-full bg-surface-container-high rounded animate-pulse"></div>
+<div class="h-3 w-4/5 bg-surface-container-high rounded animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ========================================================================= -->
+<!-- 5. BOTÓN FLOTANTE (FAB) / SOLICITUD DE CAMPAÑA RÁPIDA                     -->
+<!-- ========================================================================= -->
+<div class="fixed bottom-6 right-6 z-50">
+<button class="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-primary-container hover:bg-primary text-on-primary-container font-headline-md text-body-md font-bold shadow-2xl transition-all duration-200 active:scale-95 border border-primary/40 opacity-90 cursor-wait" type="button">
+<span class="material-symbols-outlined text-[20px] animate-spin" data-icon="sync">sync</span>
+<span>⚡ Cargando Datos del Brief...</span>
+</button>
+</div>
+</body></html>
